@@ -1,0 +1,15 @@
+\frametitle {Activity: Setting up your homepage (Optional)}
+Instead of using \texttt{hello.txt}, create a file named \texttt{index.html} and
+put it in your \texttt{public\_html} directory. Remember to change its
+permissions to readable by all.
+
+\begin{verbatim}
+<html>
+<head>
+<title>Sample index page</title>
+</head>
+<body>
+Hello World
+</body>
+</html>
+\end{verbatim}

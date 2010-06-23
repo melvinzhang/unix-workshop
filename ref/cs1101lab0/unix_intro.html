@@ -1,0 +1,1937 @@
+<html><head><title>Introduction to Sunfire (CS1101)</title>
+
+
+<link href="unix_intro.css" rel="stylesheet" type="text/css"></head><body>
+<h5>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tbody><tr>
+    <td bgcolor="#3366cc"><img alt="" height="1" width="1"></td>
+  </tr>
+</tbody></table>
+An Introduction to the <i>Sunfire</i> <br>
+Programming Environment <br>
+<font size="2">
+Lab #0 (AY2007/8 Semester 1) <br>
+17 August 2007, Friday <br>
+No submission needed <br>
+School of Computing, National University of Singapore
+</font>
+</h5>
+
+<a name="section1"></a>
+<h1>1 Introduction </h1>
+<p>
+This laboratory is designed to give you an introduction to the <i>sunfire</i>
+Java programming environment, the environment which you will be working in
+for your CS1101 practical sessions. This first lab session will also help
+you to become familiar with logging into the <i>sunfire</i> UNIX machine,
+manipulating and editing files in UNIX, compiling, and running a simple Java
+program.
+</p><p>
+
+<a name="section2"></a>
+</p><h1>2 Accessing <i>sunfire</i> </h1>
+<p>
+Two authentication procedures are needed to access <i>sunfire</i>. 
+The following describes the steps from a typical laboratory PC.
+</p><p>
+
+<a name="section2_1"></a>
+</p><h2>2.1 Logging into NUSNET </h2>
+<p>
+If you are reading this document on a PC in SoC, you are already logged into
+NUSNET, in which case you may skip to 
+<a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#login_sunfire">2.2</a>.
+
+</p><p>
+SoC has many personal computers (PCs) located in various laboratories, 
+classrooms, and offices. The PCs are networked within the
+campus via the NUSNET local area network which is in turn connected to the
+internet. Generally, these PCs run Windows XP as the sole operating system.
+In order to use any of these machines, you need to authenticate yourself to
+the NUSNET server through a login process.
+</p><p>
+</p><div align="center">
+<img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/ctrl_alt_delete.gif" src="ctrl_alt_delete.gif" alt="ctrl_alt_delete.gif" align="middle"></div>
+
+<p>
+
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+      If the PC is not on, switch it on. You should be greeted with a 
+      Windows screen. As instructed on the screen, press 
+      <b>Ctrl-Alt-Delete</b>.
+    </td>
+  </tr>
+</tbody></table>
+
+</p><p>
+All NUS students are issued with the NUSNET account by the Computer Centre.
+The domain name (ie. suffix) of this account is <tt>@nus.edu.sg</tt>. 
+<!--
+Note that your NUSNET user-id is different from your matriculation number, 
+although they curiously share the same format. 
+-->
+Use the NUSNET account to identify yourself to the NUSNET server:
+
+</p><p>
+</p><div align="center">
+<img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/stu_login.gif" src="stu_login.gif" alt="stu_login.gif" align="middle">
+</div>
+
+<p>
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+       When a login screen appears, type in your <b>NUSNET user-id</b>, 
+       your <b>NUSNET password</b>, and <b>select the NUSSTU domain</b>.
+    </td>
+  </tr>
+</tbody></table>
+
+</p><p>
+Note that user-ids and passwords are case-sensitive, and that passwords
+should <i>never</i> appear on your screen as you type them (the characters
+should be replaced with asterisks). So type slowly and carefully. Make sure
+"CapsLock" is off. If you use the numeric pad keys, make sure "NumLock" is
+on.
+
+</p><p>
+After you have logged into NUSNET, you should see the familiar Windows XP
+desktop, icons, and taskbar. You can now execute Windows programs that have
+been installed in the machine. For example, you can access the internet
+using Microsoft Internet Explorer (IE). 
+
+</p><p>
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+       Start IE (Start -&gt; Programs -&gt; Internet Explorer) and point your
+       browser to
+       <a href="http://www.comp.nus.edu.sg/%7Ecs1101x">http://www.comp.nus.edu.sg/~cs1101x/</a>.
+    </td>
+  </tr>
+</tbody></table>
+
+</p><p>
+CS1101 students (that includes CS1101X, Y and Z) students will be doing
+programming in Windows, but in order
+to have our SoC students properly acquainted with advanced (and arguably
+superior) operating systems, I would like you to also learn about
+the UNIX operating system on <i>sunfire</i> and do your programming
+in that environment.
+
+</p><p>
+<a name="section2_2"></a>
+<a name="login_sunfire"></a>
+</p><h2>2.2 Logging (ssh) into <i>sunfire</i> </h2>
+<p>
+In addition to your NUSNET account, all SoC students, as well as students
+from other faculties taking SoC modules, are issued with an SoC UNIX
+account. The domain name of the SoC account is <tt>@comp.nus.edu.sg</tt>. 
+Note that for non-SoC students, the SoC UNIX account created for your 
+course are purged at the end of the semester. Do not mix up your SoC 
+account with your NUSNET account - they are <i>not</i> interchangeable.
+
+</p><p>
+Use your SoC UNIX account for logging into <i>sunfire</i>, or other 
+UNIX machines in SoC. The <i>sunfire</i>, in particular, is a multiuser 
+machine residing in the SoC machine room (on S15 ground floor, hidden
+from view). That means many students can simultaneously work in the
+machine at the same time. One way of accessing <i>sunfire</i> is to start a
+remote shell (also known as command prompt in Windows) where you can perform
+tasks and execute programs on <i>sunfire</i> without having to be physically 
+at the machine. This is known as a client-server relationship - your remote
+shell is the client and <i>sunfire</i> is the server. Start your shell client 
+as follows:
+
+</p><p>
+</p><div align="center">
+<img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/ssh_sunfire.gif" src="ssh_sunfire.gif" alt="ssh_sunfire.gif" align="middle">
+</div>
+
+<p>
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+      Using your mouse and left mouse button, click on <b>Start -&gt;
+      Programs -&gt; SSH Secure Shell -&gt; Secure Shell Client</b>. 
+      A window appears.
+      Click on <b>Quick Connect</b> and a dialog appears asking which 
+      server you wish to connect to. Enter <b>sunfire.comp.nus.edu.sg</b> 
+      as the Host Name and your <b>SoC UNIX user-id</b> as the User Name. 
+      Leave the rest of the fields as it is. Click <b>Connect</b>. 
+      Enter your <b>SoC password</b> in the password dialog.
+    </td>
+  </tr>
+</tbody></table>
+
+</p><p>
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+      After you click Connect in the above steps, you <i>might</i> see a
+      "Host Identification" dialog if this is the first time your machine 
+      is connecting to <i>sunfire</i>. Click <b>Yes</b> and proceed.
+    </td>
+  </tr>
+</tbody></table>
+
+</p><p>
+Once you have logged into sunfire, you are automatically placed in your
+home directory.
+</p><p>
+</p><div align="center">
+<img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/ssh_sunfire2.gif" src="ssh_sunfire2.gif" alt="ssh_sunfire2.gif" align="middle">
+</div>
+
+<p>
+<a name="section3"></a>
+</p><h1>3 Common UNIX commands </h1>
+<p>
+When in the UNIX shell, you might find that there is a lot of typing and not
+much mouse clicking, which may be little different from the graphical
+user-interfaces (GUI) you are used to. A little primitive? Perhaps. That's
+where we'll start and we'll get to the fancy stuff later.
+
+</p><p>
+Within the shell window, basically here's what happens: you are presented
+with a prompt awaiting your command; You type a command, press enter, and
+the shell program interprets and checks if the command is valid. If it is,
+the corresponding program or utility is invoked, otherwise a error message
+is displayed. The shell then awaits your next command.
+
+</p><p>
+For instance, suppose you wish to know the current date and time, you may
+simply issue the <tt>date</tt> command.
+
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+      Query the system's date:
+    </td>
+  </tr>
+</tbody></table>
+
+</p><pre>stutest@sf3:~[24]$ date
+Mon Jul 18 22:39:35 GMT-8 2005
+</pre>
+
+<p>
+On the other hand, if the command you typed is invalid, the shell complains
+with a "Command not found" error message.
+
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+      <b>Type some nonsense</b> and watch the system snide back at you.
+    </td>
+  </tr>
+</tbody></table>
+
+</p><pre>stutest@sf3:~[25]$ asdfasdf
+bash: asdfasdf: command not found
+stutest@sf3:~[26]$
+</pre>
+
+<p>
+The following subsections are a few commonly used commands. This list is by
+no means exhaustive but it'll suffice for now. In time you will learn to be
+familiar with these commands and many more. Do note that UNIX commands are
+case-sensitive.
+
+</p><p>
+<a name="section3_1"></a>
+</p><h2>3.1 <tt>echo, cat, &gt;, », &lt;</tt> </h2>
+<p>
+<tt>echo</tt> is a typical UNIX command - a single-worded instruction to be
+followed by a number of parameters, each separated by one or more spaces.
+You type the command and its parameters into the UNIX shell, hit enter, and
+it gives a reply which usually also signals the completion of the command. Like
+so:
+
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+      Try this:
+    </td>
+  </tr>
+</tbody></table>
+
+</p><pre>stutest@sf3:~[82]$ echo "Hello there"
+Hello there
+stutest@sf3:~[83]$
+</pre>
+
+<p>
+In this case, the <tt>echo</tt> command simply "prints" whatever parameters you
+typed after the <tt>echo</tt> command. Note that the double-quotes were not
+printed. The double-quotes simply indicate that we wish to treat <tt>"Hello
+there"</tt> as a single string parameter. What if the double-quotes are not
+there? 
+
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+      Try these examples and reason the results you see:
+    </td>
+  </tr>
+</tbody></table>
+
+</p><pre>stutest@sf3:~[84]$ echo Hello there
+stutest@sf3:~[85]$ echo Hello              there
+stutest@sf3:~[86]$ echo "Hello\nthere"
+</pre>
+
+<p>
+In that last example, the special character <tt>"\n"</tt> is a
+newline character to indicate that whatever output that follows should begin
+on a new line. In the first two examples, the two words <tt>"Hello"</tt> and
+<tt>"there"</tt> were treated as two parameters; and it didn't matter how many
+spaces separates them.
+
+</p><p>
+Later, when you begin writing Java programs, you will find that there is
+often a need to create test data for the programs you write. Here's a simple
+way to create simple a test data file:
+
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+       Create this single-lined data file:
+    </td>
+  </tr>
+</tbody></table>
+
+</p><pre>stutest@sf3:~[87]$ echo "The quick brown fox jumps over the lazy dog." &gt; fox.dat
+stutest@sf3:~[88]$
+</pre>
+
+<p>
+Unlike the previous executions of <tt>echo</tt>, this time we didn't get any
+reply. So where did the string go? Answer: into a file named <tt>"fox.dat"</tt>.
+The <tt>"&gt;"</tt> character redirects the output of the preceding command 
+into a named file. How do you know it's there? Use the <tt>"cat"</tt> command 
+to display the entire contents of a file (usually text file)
+to the shell window:
+
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+      Printing (to screen) the contents of a text file:
+    </td>
+  </tr>
+</tbody></table>
+
+</p><pre>stutest@sf3:~[88]$ cat fox.dat
+The quick brown fox jumps over the lazy dog.
+stutest@sf3:~[89]$
+</pre>
+
+<p>
+Want to append more lines to the data file? Use the double-redirect:
+
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+      Appending lines to an existing file:
+    </td>
+  </tr>
+</tbody></table>
+
+</p><pre>stutest@sf3:~[90]$ echo "While it sleeps." &gt;&gt; fox.dat
+stutest@sf3:~[91]$ echo "While it sleeps." &gt;&gt; fox.dat
+stutest@sf3:~[92]$ echo "While it sleeps." &gt;&gt; fox.dat
+stutest@sf3:~[93]$ cat fox.dat
+The quick brown fox jumps over the lazy dog.
+While it sleeps.
+While it sleeps.
+While it sleeps.
+</pre>
+<p>
+Likewise, the "&lt;" character redirects input from a file.
+For an example, see
+<a href="#section9_3">9.3</a>.
+
+</p><p>
+<a name="section3_2"></a>
+</p><h2>3.2 <tt>history</tt> </h2>
+<p>
+Your UNIX shell keeps track of a "history" of the commands you typed. To
+repeat a command, you can simply hit the "arrow up" key.
+
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+      Try the arrow-up key to append more lines to the data file.
+    </td>
+  </tr>
+</tbody></table>
+
+</p><p>
+The history of commands is cleared each time a new shell is started. If
+you're interested to see a list of the history, simply type <tt>history</tt>:
+</p><pre>stutest@sf3:~[93]$ history
+   78  echo hello
+   79  echo hello there
+   80  echo
+   81  which echo
+   82  echo Hello there
+   83  echo "The quick brown fox jumps over the lazy dog." &gt; fox.dat 
+   84  cat fox.dat
+   85  echo "While it sleeps." &gt;&gt; fox.dat
+   86  echo "While it sleeps." &gt;&gt; fox.dat
+   87  echo "While it sleeps." &gt;&gt; fox.dat
+   88  cat fox.dat
+   90  h
+</pre>
+
+<p>
+<a name="section3_3"></a>
+<a name="unix_ls"></a>
+</p><h2>3.3 <tt>ls</tt> </h2>
+<p>
+The workspace in your UNIX account is compartmentalized into directories
+(also known as folders in Windows). The directory where you start from
+whenever you open a UNIX shell is known as your "home directory".
+At this point you should have at least one file in your home directory - 
+<tt>"fox.dat"</tt> which we have just created. To check that it is indeed 
+there, or just to see what other files you have, use the <tt>"ls"</tt> 
+(list directory contents) command:
+
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+      Different options to <tt>ls</tt> customizes the output format:
+    </td>
+  </tr>
+</tbody></table>
+
+</p><pre>stutest@sf3:~[94]$ ls
+fox.dat
+stutest@sf3:~[95]$ ls -l
+total 16
+-rw-------   1 stutest  soc05         96 Aug  6 19:13 fox.dat
+</pre>
+
+<p>
+The last command list the directory contents in "long" format. It lists the
+file type and permissions 
+(see <a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#unix_chmod">3.7</a>), ownership information, 
+and date and time the file was last modified.
+
+</p><p>
+Sometimes a directory contains "hidden" files - these are files beginning
+with a <tt>"."</tt> character. To list them, use the <tt>"-a"</tt> option 
+to <tt>ls</tt>.
+</p><pre>stutest@sf3:~[110]$ ls -al
+total 144
+drwx-----x   2 stutest  soc05       8192 Aug  6 19:21 .
+drwxr-xr-x 465 root     other      16384 Jul 29 15:05 ..
+-rw-------   1 stutest  soc05        260 Aug  6 17:57 .Xauthority
+-rw-------   1 stutest  soc05         83 Jun 18 11:41 .bash_history
+-rw-------   1 stutest  soc05        329 Jun 17 08:54 .bashrc
+-rwx------   1 stutest  soc05         36 Jun 17 08:54 .cshrc
+-rwx------   1 stutest  soc05         53 Aug  6 17:57 .lastlogin
+-rw-------   1 stutest  soc05         96 Aug  6 19:13 fox.dat
+stutest@sf3:~[111]$
+</pre>
+
+<p>
+As you can see, your home directory does indeed contain some other files. 
+
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+      "<tt>cat</tt>" those hidden files to examine their contents.
+    </td>
+  </tr>
+</tbody></table>
+
+</p><p>
+<a name="section3_4"></a>
+</p><h2>3.4 <tt>man</tt> </h2>
+<p>
+UNIX provides an on-line help facility in the form of pages from the system
+documentation. These pages are known as man (manual) pages and you use the
+man utility to display the them. This documentation can be helpful
+especially if you know what utility or program you want to use but have
+forgotten the correct way to use it (eg. options). 
+
+</p><p>
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+      To find out more about a utility, type man followed by the name 
+      of the utility. For example,
+    </td>
+  </tr>
+</tbody></table>
+
+</p><pre>stutest@sf3:~[112]$ man ls
+User Commands                                               LS(1)
+
+NAME
+     ls, dir, vdir - list contents of directories
+
+SYNOPSIS
+     ls [-abcdfgiklmnpqrstuxABCFGLNQRSUX1] [-w  cols]  [-T  cols]
+     [-I  pattern]  [--all]  [--escape]  [--directory]  [--inode]
+     [--kilobytes]  [--numeric-uid-gid]   [--no-group]   [--hide-
+     control-chars]     [--reverse]    [--size]    [--width=cols]
+     [--tabsize=cols] [--almost-all] [--ignore-backups]  [--clas-
+     sify]    [--file-type]    [--full-time]   [--ignore=pattern]
+     [--dereference]  [--literal]  [--quote-name]   [--recursive]
+     [--sort={none,time,size,extension}]
+     [--format={long,verbose,commas,across,vertical,single-
+     column}]  [--time={atime,access,use,ctime,status}]  [--help]
+     [--version]                         [--color[={yes,no,tty}]]
+     [--colour[={yes,no,tty}]] [name...]
+
+DESCRIPTION
+     ....
+</pre>
+
+<p>
+If the man page spans more than one screen space, the display is
+automatically paginated - press "f" (or "space") to scroll down and "b" to
+scroll back.
+
+</p><p>
+In case you do not know the exact command name, you can query the man pages
+by keyword. For example, to list commands which manipulate directories (see
+<a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#unix_cd">3.5</a>), you could do this:
+</p><pre>stutest@sf3:~[112]$ man -k directories
+cp              cp (1)          - copy files and directories
+mkdir           mkdir (1)       - make directories
+rm              rm (1)          - remove files or directories
+rmdir           rmdir (1)       - remove empty directories
+...
+</pre>
+
+<p>
+<a name="section3_5"></a>
+<a name="unix_cd"></a>
+</p><h2>3.5 <tt>cd, mkdir, rmdir, pwd</tt> </h2>
+<p>
+The directories of a UNIX filesystem is organized as a huge hierarchical
+tree. If a directory <tt>B</tt> is residing in a directory <tt>A</tt>, 
+<tt>B</tt> is said to be the subdirectory of <tt>A</tt>, <tt>A</tt> the 
+parent directory of <tt>B</tt>, and we write <tt>"A/B"</tt> to indicate 
+this relationship. Each directory may contain any number of 
+files/subdirectories, but each file/directory must have a unique parent 
+directory.
+<font color="#0000ff">Note that UNIX uses the <tt>"/"</tt> character 
+to separate directory names while Microsoft Windows uses 
+<tt>"\"</tt> - don't confuse these two.</font>
+
+</p><p>
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+      To show the directory you are currently in, use <tt>pwd</tt> (print
+      working directory):
+    </td>
+  </tr>
+</tbody></table>
+
+</p><pre>stutest@sf3:~[113]$ pwd
+/home/stu05/stutest
+</pre>
+
+<p>
+The <tt>pwd</tt> command shows an absolute (or full) path, that is, a full
+listing of all directories leading from the root of the filesystem to your
+current working directory.
+
+</p><p>
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+      To create a subdirectory within your current working directory, use
+      <tt>mkdir</tt>:
+    </td>
+  </tr>
+</tbody></table>
+
+</p><pre>stutest@sf3:~[114]$ mkdir hole
+stutest@sf3:~[115]$ ls -l
+total 16
+-rw-------   1 stutest  soc05         96 Aug  6 19:13 fox.dat
+drwx------   2 stutest  soc05         96 Aug  7 07:37 hole
+stutest@sf3:~[116]$ ls
+fox.dat  hole
+stutest@sf3:~[117]$ ls -F
+fox.dat   hole/
+</pre>
+
+<p>
+In the long format of <tt>ls</tt>, a subdirectory is indicated by a 
+<tt>"d"</tt> at the beginning of the line. In the terse <tt>ls</tt> listing, 
+use the <tt>"-F"</tt> option to distinguish files from directories.
+
+</p><p>
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+      To change your current working directory to another, use <tt>cd</tt>
+      (change directory). Note that "<tt>..</tt>" denotes the parent 
+      directory of directory you are currently in.
+    </td>
+  </tr>
+</tbody></table>
+
+</p><pre>stutest@sf3:~[118]$ cd hole
+stutest@sf3:~/hole[119]$ pwd
+/home/stu05/stutest/hole
+stutest@sf3:~/hole[120]$ cd ..
+stutest@sf3:~[121]$ pwd
+/home/stu05/stutest
+</pre>
+
+<p>
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+      To remove a directory use <tt>rmdir</tt>:
+    </td>
+  </tr>
+</tbody></table>
+
+</p><pre>stutest@sf3:~[114]$ rmdir hole
+stutest@sf3:~[115]$ ls -l
+total 16
+-rw-------   1 stutest  soc05         96 Aug  6 19:13 fox.dat
+</pre>
+
+<p>
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+      To change to somebody else's home directory, precede the user's name
+      with a ~ character. Note that you may not have sufficient permission to
+      access the files in that user's directory. To go back to your own 
+      home directory, simply do a <tt>cd</tt> with no parameters.
+    </td>
+  </tr>
+</tbody></table>
+
+</p><pre>stutest@sf3:~[116]$ cd ~cs1101
+stutest@sf3:/home/course/cs1101[117]$ ls -l
+.: Permission denied
+total 16
+stutest@sf3:/home/course/cs1101[118]$ cd
+stutest@sf3:~[119]$
+</pre>
+
+<p>
+You should try to organize the directories in your workspace in a meaningful
+way which makes things tidier and future reference easier. For a start, you
+should at least work on each lab assignment in a new subdirectory. For
+example, as the course progresses this might be the directory structure you
+have:
+</p><pre>stutest@sf3:~[120]$ find courses -type d 
+courses
+courses/cs1101
+courses/cs1101/labs
+courses/cs1101/labs/lab01
+courses/cs1101/labs/lab02
+courses/cs1101/labs/lab03
+courses/cs1101/labs/lab04
+courses/cs1101/labs/progexam1
+courses/cs1101/labs/progexam2
+courses/cs1101/handouts
+</pre>
+
+<p>
+<a name="section3_6"></a>
+</p><h2>3.6 <tt>cp, mv, rm</tt> </h2>
+<p>
+To copy a file, use <tt>cp</tt>. To remove a file, use <tt>rm</tt>. 
+To rename or move a file, use <tt>mv</tt>. To copy an entire directory 
+use <tt>cp -r</tt>. To remove an entire directory (<tt>careful!</tt>), 
+use <tt>rm -fr</tt>.
+
+</p><p>
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+      Making a backup of a directory:
+    </td>
+  </tr>
+</tbody></table>
+
+</p><pre>stutest@sf3:~[192]$ ls -l
+total 16
+-rw-------   1 stutest  soc05         96 Aug  6 19:13 fox.dat
+stutest@sf3:~[193]$ mkdir hole
+stutest@sf3:~[194]$ mv fox.dat hole
+stutest@sf3:~[195]$ ls -l hole
+total 16
+-rw-------   1 stutest  soc05         96 Aug  6 19:13 fox.dat
+stutest@sf3:~[196]$ cp -r hole hole.backup
+stutest@sf3:~[198]$ ls -l *  
+hole:
+total 16
+-rw-------   1 stutest  soc05         96 Aug  6 19:13 fox.dat
+hole.backup:
+total 16
+-rw-------   1 stutest  soc05         96 Aug 16 15:39 fox.dat
+stutest@sf3:~[199]$ rm -fr hole.backup/
+stutest@sf3:~[200]$ ls -l
+total 0
+drwx------   2 stutest  soc05         96 Aug 16 15:39 hole
+</pre>
+
+<p>
+<a name="section3_7"></a>
+<a name="unix_chmod"></a>
+</p><h2>3.7 <tt>chmod</tt> </h2> 
+<p>
+Access to files and directories is controlled in UNIX using access
+permissions. UNIX allows three levels of access for different categories of
+users:
+
+</p><ul>
+  <li><tt>r</tt> for read, <tt>w</tt> for write and <tt>x</tt> for execute.
+</li></ul>
+
+<p>
+separately for
+
+</p><ul>
+  <li>yourself (<tt>u</tt>), a group of users (<tt>g</tt>), 
+      other users (<tt>o</tt>) or everybody (<tt>a</tt>).
+</li></ul>
+
+<p>
+Access permissions can be viewed using the <tt>ls -l</tt> command (See
+<a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#unix_ls">3.3</a>) and UNIX allows you, if you 
+own a file, to set file permissions.
+
+</p><p>
+In the CS1101 student account, when a file is created the permissions are
+set by default so that only you have read and write access to the file.
+Default access permissions can be changed (see <tt>man umask</tt>). 
+If you want to arrange for everyone ("<tt>a</tt>") to also be able to 
+read ("<tt>+r</tt>") the file, the <tt>chmod</tt> ('change mode') command 
+sets the necessary access permission:
+
+</p><pre>stutest@sf3:~[228]$ echo "The quick brown fox jumps over the lazy dog." &gt; fox.dat
+stutest@sf3:~[229]$ ls -l
+total 16
+-rw-------   1 stutest  soc05         45 Aug 16 18:45 fox.dat
+stutest@sf3:~[230]$ chmod a+r fox.dat
+stutest@sf3:~[231]$ ls -l
+total 16
+-rw-r--r--   1 stutest  soc05         45 Aug 16 18:45 fox.dat
+</pre>
+
+<p>
+As shown, user <tt>stutest</tt> is under the UNIX group <tt>soc05</tt> and
+therefore the files he creates has that group name.
+To withdraw the read access from all 'others' but yourself, use <tt>chmod
+go-r</tt>:
+</p><pre>stutest@sf3:~[240]$ chmod go-r fox.dat
+stutest@sf3:~[241]$ ls -l 
+total 16
+-rw-------   1 stutest  soc05         45 Aug 16 18:47 fox.dat
+drwx------   2 stutest  soc05         96 Aug 16 15:39 hole
+</pre>
+
+<p>
+Access rights on directories are a little different; read access means that
+the owner, group, or everyone can read the names of the files in the
+directory (ie. able to <tt>ls</tt> the directory), write means that they can
+change the directory, ie. can create and remove files in it and eXecute
+access means that they can <tt>cd</tt> to it, ie. can make this directory 
+their current directory. It is common for directory access to be 
+<tt>drwxr-xr-x</tt>; <tt>x</tt> access is harmless but it is very dangerous 
+to give <tt>w</tt> access on a directory to the group or other.
+
+</p><p>
+The command <tt>chmod</tt> also sets access permissions on directories. For
+example to remove all permissions from group and others on your home
+directory:
+</p><pre>stutest@sf3:~[242]$ chmod go-rwx ~
+</pre>
+
+<p>
+Group ownership of files and directories can also be changed. Access
+permissions can also be set numerically and some may find this easier. See
+<tt>man chmod</tt> for these details and more.
+
+</p><p>
+<a name="section3_8"></a>
+</p><h2>3.8 <tt>less</tt> </h2> 
+<p>
+As mentioned above, you can use the <tt>cat</tt> command to display the
+contents of a text file. However, if the file is big (spans more than one
+screen space), you'll find that a command that paginates the file as you
+read it is more helpful.
+
+</p><p>
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+       Examine the contents of a long file (tap 'f' to scroll forward, 
+       'b' to scroll backwards, and 'q' to quit):
+    </td>
+  </tr>
+</tbody></table>
+
+</p><pre>stutest@sf3:~[306]$ less ~cs1101/stu/bluej.txt 
+                            INTRODUCTION TO BLUEJ
+
+                             by Edward McDowell
+
+
+    BlueJ is a simple integrated development environment for Java created
+    at Monash University and the University of Southern Denmark for use
+    in teaching elementary computer programming.  It is free and easy to
+    use.  BlueJ and its documentation may be downloaded from the BlueJ
+    web page "http://www.bluej.org".  The current version of BlueJ
+    requires that the Sun Java Development Kit J2SE 1.3 or higher be
+    installed on your computer.  This is available at the Java web page
+    "http://java.sun.com".
+    ...
+</pre>
+
+<p>
+It is often useful to 'pipe' the output of a command to less:
+
+</p><p>
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+      List students in the <tt>soc05</tt> group (tap 'f' to scroll forward, 
+      'b' to scroll backwards, and 'q' to quit):
+    </td>
+  </tr>
+</tbody></table>
+
+</p><pre>stutest@sf3:~[316]$ ls -l /stu/stu05/ | less
+total 5488
+drwx------   8 adelinel soc05       8192 Aug 13 21:26 adelinel
+drwx------   3 adihudio soc05         96 Jul 29 15:04 adihudio
+drwx------   6 ahmadsho soc05       8192 Aug 13 00:48 ahmadsho
+drwx------   3 akashram soc05         96 Jul 29 15:04 akashram
+...
+</pre>
+
+<p>
+<a name="section3_9"></a>
+</p><h2>3.9 Printing commands: <tt>lpr, lpq, lprm, lpstat</tt> </h2>
+<p>
+Refer to 
+<a href="https://www.comp.nus.edu.sg/cf/printing/print-unix.html" target="_blank">https://www.comp.nus.edu.sg/cf/printing/print-unix.html</a>
+for the usage of these printing commands, where you can send your 
+printing jobs to, and monthly limits on the amount of hardcopy you can print.
+
+</p><p>
+For the location of printers, see
+<a href="https://www.comp.nus.edu.sg/cf/printing/printers.html" target="_blank">https://www.comp.nus.edu.sg/cf/printing/printers.html</a>.
+
+</p><p>
+<a name="section3_10"></a>
+</p><h2>3.10 <tt>who, finger</tt> </h2>
+<p>
+To find out who's on the system with you, type <tt>who</tt> or <tt>w</tt>. 
+To know more about a user, use the <tt>finger</tt> command. 
+
+</p><p>
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+      Listing the current users of <i>sunfire</i>:
+    </td>
+  </tr>
+</tbody></table>
+
+</p><pre>stutest@sf3:~[320]$ who  | less
+chent      pts/1        Aug 15 10:29    (soccf-db3-015.ddns.comp.nus.edu.sg)
+root       console      Jun 10 18:23
+zhaoyue    pts/3        Aug 16 09:32    (soccf-db2-015.ddns.comp.nus.edu.sg)
+cs3234     pts/6        Aug 13 16:59    (sashimi.ddns.comp.nus.edu.sg)
+sunj       pts/7        Aug 16 13:16    (soccf-se-017.ddns.comp.nus.edu.sg)
+...
+stutest@sf3:~[321]$ finger afang
+Login name: afang                       In real life: Fang Chee Hung Anthony
+Directory: /home/staff/afang            Shell: /bin/bash
+Last login Mon Aug 11, 2003 on pts/69 from afang-1.ddns.co
+No unread mail
+No Plan.
+</pre>
+
+<p>
+<a name="section3_11"></a>
+</p><h2>3.11 <tt>quota</tt> </h2> 
+<p>
+Each student has a limited amount of disk space allocated to them. To check
+your current disk quota and usage, use the <tt>quota</tt> command.
+</p><pre>stutest@sf3:~[295]$ quota
+From filesystem host=sf0.comp.nus.edu.sg
+Disk quotas for stutest (uid 11292):
+
+Filesystem     usage  quota  limit    timeleft  files  quota  limit
+timeleft
+
+From filesystem host=sf3.comp.nus.edu.sg
+Disk quotas for stutest (uid 11292):
+
+Filesystem     usage  quota  limit    timeleft  files  quota  limit
+timeleft
+
+/stu              56 204800 204800                  8      0      0
+</pre>
+
+<p>
+In the example above, the user <tt>stutest</tt> has a disk quota of 204800
+bytes, or 204800/1024 = 200 megabytes, of which 56 bytes is currently in
+usage.
+
+</p><p>
+<a name="section3_12"></a>
+</p><h2>3.12 Killing processes: <tt>ps, kill, ctrl-c, ctrl-\</tt> </h2>
+<p>
+As you run programs in <i>sunfire</i>, you might encounter stray or 'hung'
+processes which you would like to terminate. In the interactive mode, you
+could try hitting the keys <tt>ctrl-c</tt> to send your program 
+the "interrupt" signal. If that doesn't work, you can try <tt>ctrl-\</tt> 
+to send the program a stronger signal that it really should die.
+
+</p><p>
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+       Try executing <tt>less ~cs1101/stu/bluej.txt</tt> in your shell 
+       and kill it with <tt>ctrl-c</tt> (won't work) or <tt>ctrl-\</tt>.
+    </td>
+  </tr>
+</tbody></table>
+
+</p><p>
+You can also kill a process by specifying its process number:
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+      Open two shell windows. In one of them, execute 
+      <tt>less ~cs1101/stu/bluej.txt</tt>. In the other shell window, 
+      query the process number of the <tt>less</tt> command and kill it:
+    </td>
+  </tr>
+</tbody></table>
+
+</p><pre>stutest@sf3:~[221]$ ps -fu stutest
+     UID   PID  PPID  C    STIME TTY      TIME CMD
+ stutest 16599 14317  0 17:21:04 pts/262  0:00 ps -fu stutest
+ stutest 14317 14313  0 17:18:02 pts/262  0:00 -bash
+ stutest 26954 26946  0 15:36:51 pts/44   0:01 -bash
+ stutest 14400 26954  0 17:18:04 pts/44   0:00 less /home/course/cs1101/stu/bluej.txt
+ stutest 26946 26914  0 15:36:51 ?        0:03 /local/5.8/sbin/sshd
+ stutest 14313 14290  0 17:18:02 ?        0:01 /local/5.8/sbin/sshd
+stutest@sf3:~[222]$ kill 14400
+</pre>
+
+<p>
+<a name="section3_13"></a>
+<a name="unix_fgbg"></a>
+</p><h2>3.13 Controlling processes: <tt>ctrl-z, jobs, fg, bg</tt> </h2>
+<p>
+In UNIX, besides terminating processes, you can also interactively control
+the execution status of a program. For example, pressing <tt>ctrl-z</tt>
+suspends the currently running program in your shell:
+
+</p><pre>stutest@sf3:~[525]$ less ~cs1101/stu/bluej.txt
+...
+   &lt; ctrl-z pressed by user &gt;
+[1]+  Stopped                 less ~cs1101/stu/bluej.txt
+stutest@sf3:~[530]$ jobs
+[1]+  Stopped                 less ~cs1101/stu/bluej.txt
+</pre>
+
+<p>
+While the program is suspended you can run other programs, for instance,
+type <tt>jobs</tt> tells you what processes are stopped. To resume the process,
+type <tt>fg</tt>. If you have more than one process stopped, type <tt>fg</tt>
+followed by the job number as listed by <tt>jobs</tt>. To put the process in
+the background, type <tt>bg</tt>.
+
+</p><p>
+Suspending and resuming jobs can be really helpful in programming. For
+example, while editing a program, you can suspend the editor for a moment to
+compile or run your program, and then resume the editor at the point where
+you left off to continue your programming.
+
+</p><p>
+<a name="section3_14"></a>
+</p><h2>3.14 Changing password </h2> 
+<p>
+You can change your password as often as you like; in fact, you are advised
+to change it regularly. 
+You may change your password via mySoC at the following URL:
+<a href="https://mysoc.nus.edu.sg/%7Emyacct/" target="_&quot;_blank&quot;">https://mysoc.nus.edu.sg/~myacct/</a>. 
+Or you may use this command: <tt>/usr/bin/passwd</tt>. 
+You will be prompted for the old (existing) password and then the new
+password (twice). 
+
+</p><p>
+Choose a password that is 6 to 8 characters long. There are guidelines to
+choosing good passwords which are safer and less susceptible to break-ins.
+When you change your password, the system will check that your new password
+satisfies its stringent requirements, failing which it will reject the
+change. Generally, the system tends to accept passwords that consist of at
+least a mix of upper-case and lower-case characters, plus some digits. 
+
+</p><p>
+Refer to this website 
+<a href="https://www.comp.nus.edu.sg/cf/unix/passwd.html" target="_blank">https://www.comp.nus.edu.sg/cf/unix/passwd.html</a>
+for more suggestions on choosing passwords.
+
+</p><p>
+<a name="section3_15"></a>
+</p><h2>3.15 What if I forget my password? </h2> 
+<p>
+<b>Always remember your password</b>! If you forget your password, 
+you may go to this web page: 
+<a href="https://mysoc.nus.edu.sg/%7Emyacct/iforgot.cgi" target="_blank">I Forgot My SoC Password</a>.
+
+</p><p>
+<a name="section3_16"></a>
+</p><h2>3.16 <tt>exit,logout</tt> </h2>
+<p>
+When you have finished, you must always log out of the computer system as
+follows:
+
+</p><pre>stutest@sf3:~/c[224]$ logout
+</pre>
+
+<p>
+Typing "<tt>exit</tt>" or pressing <tt>ctrl-d</tt> will also have the 
+same effect.
+The <tt>ctrl-d</tt> signals an End-Of-File (EOF) which in this case ends the
+input to the shell. This can accidentally knock you out of your shell if
+you're not careful. To modify the behavior of <tt>ctrl-d</tt>, try 
+(you will have to <tt>ctrl-d</tt> 3 times to exit):
+</p><pre>stutest@sf3:~[501]$ export IGNOREEOF=2
+</pre>
+
+<p>
+In any case, you MUST remember to log out, otherwise anyone who comes by 
+may delete all your valuable files away!
+
+</p><p>
+Similarly, if you find that someone has forgotten to logoff, just graciously
+log out for him or her. Do a <tt>whoami</tt> and send the user a polite note.
+Don't even think of malice.
+
+</p><p>
+This logs you out of <i>sunfire</i> but you are in still in your NUSNET 
+session.  To log off from NUSNET, left mouse click the Start button at 
+the bottom-left of the screen, click Shut-down and select 
+Log Off xxxxxxxx (where xxxxxxxx is your NUSNET user-id).
+
+</p><p>
+You need not shut down, restart, or switch off the PC.
+
+</p><p>
+<a name="section4"></a>
+<a name="file_transfer"></a>
+</p><h1>4 File transfer</h1>
+<p>
+You can transfer your files from your own PC to the UNIX server and vice
+versa by using the SSH Secure File Transfer Client. 
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+      In order to open the SSH SFTP window, you need to 
+      click 
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/ssh_file_transfer_icon.gif" src="ssh_file_transfer_icon.gif" alt="ssh_file_transfer_icon.gif">
+      on the SSH window.
+    </td>
+  </tr>
+</tbody></table>
+</p><p>
+</p><div align="center">
+<img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/ssh_file_transfer.gif" src="ssh_file_transfer.gif" alt="ssh_file_transfer.gif" align="middle">
+</div>
+<p>
+A File Transfer window will pop up, as shown below. You may then transfer 
+files between the local PC (local folders) and your UNIX account (remote
+folders). You may select Ascii, Binary, or Auto Select mode. Select
+the files you want to transfer, click on "Operation" and select either
+"Upload" (from local to remote) or "Download" (from remote to local).
+</p><p>
+</p><div align="center">
+<img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/ssh_file_transfer2.gif" src="ssh_file_transfer2.gif" alt="ssh_file_transfer2.gif" align="middle">
+</div>
+
+<p>
+<a name="section5"></a>
+<a name="unix_samba"></a>
+</p><h1>5 Samba services from UNIX </h1>
+<p>
+Sometimes it is useful to be able to access your UNIX files from your local
+PC, for instance, when making backups or when you want to copy files to
+diskettes. One way is to use a secure FTP program such as WinSCP to connect
+to <i>sunfire</i>. Another way is to mount your UNIX home directory as 
+a virtual drive on your local PC. The latter service is provided via 
+the samba file services.
+
+</p><p>
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+       If you wish to use Samba, visit: 
+       <a href="https://mysoc.nus.edu.sg/%7Ewebsamba/" target="_blank">https://mysoc.nus.edu.sg/~websamba/</a>
+       and enable the service for your account, then read the FAQ link 
+       at the web page.
+    </td>
+  </tr>
+</tbody></table>
+
+</p><p>
+Please note that for your programming exams you may be given special
+examination UNIX accounts, and that for security reasons, you will not be
+allowed to mount the examination account onto your PC.
+
+</p><p>
+<a name="section6"></a>
+</p><h1>6 Editing text files in UNIX </h1>
+<p>
+There are a number of text editors available in <i>sunfire</i>: 
+vi, vim, emacs, joe, pico, nano, etc. The more powerful one requires 
+a longer time to learn. For this lab, you will use the simplest 
+editor of all - pico. Equivalently, you may use nano, which is an 
+open-source variant of pico enhanced with programmer-friendly features 
+such as syntax-highlighting and multiple-buffers etc.
+
+</p><p>
+<a name="section6_1"></a>
+</p><h2>6.1 Introduction to pico/nano </h2>
+<p>
+Pico (or nano) is designed to be a simple, easy-to-use text editor. If you
+are familiar with the UNIX pine mailer you'll find the layout very similar.
+
+</p><p>
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+      Start the nano editor as follows and type in the 
+      "<tt>HelloWorld.java</tt>" program below. Be aware that Java is 
+      case-sensitive, so be sure upper/lower-cases are typed as shown. 
+      Note that the colors in your window may appear different from 
+      the snapshot shown here.
+    </td>
+  </tr>
+</tbody></table>
+
+</p><pre>stutest@sf3:~[415]$ ~cs1101/stu/bin/nano HelloWorld.java
+</pre>
+
+<p>
+</p><div align="center">
+  <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/nano1.gif" src="nano1.gif" alt="nano1.gif" align="middle">
+</div>
+
+<p>
+The status line at the top of the display shows the program's version, the
+current file being edited and whether or not there are outstanding
+modifications that have not been saved. The third line from the bottom is
+used to report informational messages and for additional command input. The
+bottom two lines list the available editing commands. Each character typed
+is automatically inserted into the buffer at the current cursor position.
+Editing commands and cursor movement (besides arrow keys) are given to pico
+by typing special control-key sequences. A caret, '^', is used to denote
+the control key, sometimes marked "CTRL", so the CTRL-q key combination is
+written as ^Q.
+
+</p><p>
+The following functions are available in pico:
+</p><div align="center">
+<table border="1" cellpadding="3">
+  <tbody><tr>
+    <td align="center">^G</td>
+    <td align="left" valign="top" width="567">Display help text</td>
+  </tr>
+  <tr>
+    <td align="center">^F or 
+                       <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/unix_intro-img1.png" src="unix_intro-img1.png" alt="$\rightarrow$" align="bottom" border="0" height="12" width="20"></td>
+    <td align="left" valign="top" width="567">move Forward a character</td>
+  </tr>
+  <tr>
+    <td align="center">^B or 
+                       <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/unix_intro-img2.png" src="unix_intro-img2.png" alt="$\leftarrow$" align="bottom" border="0" height="12" width="20"></td>
+    <td align="left" valign="top" width="567">move Backward a character.</td>
+  </tr>
+  <tr>
+    <td align="center">^P or 
+                       <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/unix_intro-img3.png" src="unix_intro-img3.png" alt="$\uparrow$" align="middle" border="0" height="29" width="12"></td>
+    <td align="left" valign="top" width="567">move to the Previous line.</td>
+  </tr>
+  <tr>
+    <td align="center">^N or 
+                       <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/unix_intro-img4.png" src="unix_intro-img4.png" alt="$\downarrow$" align="middle" border="0" height="29" width="12"></td>
+    <td align="left" valign="top" width="567">move to the Next line.</td>
+  </tr>
+  <tr>
+    <td align="center">^V or 'PageDown'</td>
+    <td align="left" valign="top" width="567">move forward a page of text.</td>
+  </tr>
+  <tr>
+    <td align="center">^Y or 'PageUp'</td>
+    <td align="left" valign="top" width="567">move backward a page of text.</td>
+  </tr>
+  <tr>
+    <td align="center">^D or 'Delete'</td>
+    <td align="left" valign="top" width="567">Delete the character at the 
+      cursor position.</td>
+  </tr>
+  <tr>
+    <td align="center">^H or 'Backspace'</td>
+    <td align="left" valign="top" width="567">Delete the character on the left 
+      of the cursor position.</td>
+  </tr>
+  <tr>
+    <td align="center">^A</td>
+    <td align="left" valign="top" width="567">move to the beginning of the 
+      current line.</td>
+  </tr>
+  <tr>
+    <td align="center">^E</td>
+    <td align="left" valign="top" width="567">move to the End of the current 
+      line.</td>
+  </tr>
+  <tr>
+    <td align="center">^W</td>
+    <td align="left" valign="top" width="567">Search for (where is) text, 
+      neglecting case.</td>
+  </tr>
+  <tr>
+    <td align="center">^L</td>
+    <td align="left" valign="top" width="567">Refresh the display.</td>
+  </tr>
+  <tr>
+    <td align="center">^ ^</td>
+    <td align="left" valign="top" width="567">Mark cursor position as 
+      beginning of selected text.</td>
+  </tr>
+  <tr>
+    <td align="center">&nbsp;</td>
+    <td align="left" valign="top" width="567">Note: Setting mark when already 
+      set unselects text.</td>
+  </tr>
+  <tr>
+    <td align="center">^K</td>
+    <td align="left" valign="top" width="567">Cut selected text (displayed 
+      in inverse characters).</td>
+  </tr>
+  <tr>
+    <td align="center">&nbsp;</td>
+    <td align="left" valign="top" width="567">Note: The selected text's 
+      boundary on the cursor side ends at the left
+      edge of the cursor. So, with selected text to the left of the cursor, the
+      character under the cursor is not selected.</td>
+  </tr>
+  <tr>
+    <td align="center">^U</td>
+    <td align="left" valign="top" width="567">Uncut (paste) last cut text 
+       inserting it at the current cursor position.</td>
+  </tr>
+  <tr>
+    <td align="center">^J</td>
+    <td align="left" valign="top" width="567">Format (justify) the current 
+      paragraph.</td>
+  </tr>
+  <tr>
+    <td align="center">&nbsp;</td>
+    <td align="left" valign="top" width="567">Note: paragraphs delimited 
+      by blank lines or indentation.</td>
+  </tr>
+  <tr>
+    <td align="center">^T</td>
+    <td align="left" valign="top" width="567">To invoke the spelling checker</td>
+  </tr>
+  <tr>
+    <td align="center">^C</td>
+    <td align="left" valign="top" width="567">Report current cursor position</td>
+  </tr>
+  <tr>
+    <td align="center">^R</td>
+    <td align="left" valign="top" width="567">Insert an external file at the 
+      current cursor position.</td>
+  </tr>
+  <tr>
+    <td align="center">^O</td>
+    <td align="left" valign="top" width="567">Output the current buffer to 
+      a file, saving it.</td>
+  </tr>
+  <tr>
+    <td align="center">^X</td>
+    <td align="left" valign="top" width="567">Exit pico, saving buffer.</td>
+  </tr>
+</tbody></table>
+</div>
+
+<p>
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+      When you are done editing the file, save it by pressing <tt>^X</tt>
+      then <tt>'y'</tt> and <tt>'enter'</tt>.
+    </td>
+  </tr>
+</tbody></table>
+
+</p><p>
+<a name="section6_2"></a>
+</p><h2>6.2 <tt>alias</tt>ing frequently used commands </h2>
+<p>
+Obviously, it is quite a hassle to have to type "<tt>~cs1101/stu/bin/nano</tt>" whenever you need to invoke the editor, something
+which you will do very often. We need a short-cut to it. One way to do so is
+to define an "alias" to the command.
+
+</p><p>
+For example, suppose you do "<tt>ls -l</tt>" very often. It would be nice to
+define a short-cut, such as "<tt>ll</tt>" which does the same but saves you a
+few keystrokes:
+
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+      Define an alias for "<tt>ls -l</tt>" as follows:
+    </td>
+  </tr>
+</tbody></table>
+
+</p><pre>stutest@sf3:~[425]$ alias ll='ls -l'
+</pre>
+
+<p>
+Now, whenever you issue the command "<tt>ll</tt>" in your shell, it would 
+be as if you had typed "<tt>ls -l</tt>", ie. "<tt>ll</tt>" is now an 
+alias for "<tt>ls -l</tt>". Try it. 
+
+</p><p>
+Still, it would be even better if this alias is automatically set up
+whenever you start your UNIX shell. The way to do that is to put the alias
+command into the <tt>.profile</tt> file in your home directory
+. The <tt>.profile</tt> file is the initialization file of your shell.
+
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+      Start the editor and set up some aliases in your <tt>.profile</tt> file:
+    </td>
+  </tr>
+</tbody></table>
+
+</p><pre>stutest@sf3:~[431]$ ~cs1101/stu/bin/nano ~/.profile
+</pre>
+
+<p>
+</p><div align="center">
+  <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/profile.gif" src="profile.gif" alt="profile.gif" align="middle">
+</div>
+
+<p>
+In the above, we've also defined an alias "<tt>e</tt>" for the nano editor. 
+As the course progresses, you'd want to edit this file to add other 
+frequently used commands, such as the Java compiler.
+</p><p>
+
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+      After you've edited and saved <tt>.profile</tt>, source the file to make
+      sure the changes take effect in the current shell. Type <tt>alias</tt> 
+      without parameters to list the current aliases in effect:
+    </td>
+  </tr>
+</tbody></table>
+
+</p><pre>stutest@sf3:~[432]$ source ~/.profile 
+stutest@sf3:~[433]$ alias
+alias cp='cp -i'
+alias e='~cs1101/stu/bin/nano'
+alias h='history'
+alias ll='ls -l'
+alias mv='mv -i'
+alias rm='rm -i'
+</pre>
+
+<p>
+You can now type "<tt>e HelloWorld.java</tt>" to edit a Java program.
+
+</p><p>
+<a name="section7"></a>
+</p><h1>7 Java programming using JDK </h1>
+<p>
+The process of creating a working Java program involves the following steps:
+
+</p><p>
+</p><div align="center">
+  <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/editcompilerun.gif" src="editcompilerun.gif" alt="editcompilerun.gif" align="middle">
+</div>
+
+<p>
+</p><ol>
+  <li>Using an editor of your choice, type in the source code (filename
+      must have extension .java, for example: HelloWorld.java).
+  <p>
+  </p></li><li>Compile your program to obtain the class file (with filename extension
+      .class) by using the "<tt>javac</tt>" compiler.
+  <p>
+  </p></li><li>If there are compilation errors, identify them and re-edit the source
+      code before you proceed.
+  <p>
+  </p></li><li>Run your class file by invoking the Java virtual machine "<tt>java</tt>" 
+      with your class file.
+  <p>
+  </p></li><li>If there are run-time errors, you must identify them and re-edit the
+      source code, and compile again.
+  <p>
+</p></li></ol>
+
+<p>
+<a name="section7_1"></a>
+</p><h2>7.1 Edit, Compile, Run </h2>
+<p>
+
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+      To use Java in your account, you need to add the 
+      following lines
+      into your <tt>.profile</tt> as described in 
+      <a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#section6_2">6.2</a>. Ensure that
+      you enter the lines exactly as shown, as you recall UNIX commands are
+      case-sensitive. After entering the above lines in <tt>.profile</tt>
+      in the editor and exiting from the editor, remember also to 
+      type <tt>source ~/.profile</tt> to activate the changes.
+    </td>
+  </tr>
+</tbody></table>
+
+</p><pre>alias javac="/usr/java/bin/javac"
+alias java="/usr/java/bin/java"
+PATH=$PATH:/usr/java/bin
+export PATH
+</pre>
+
+<p>
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+      Continuing from the previous section, suppose you have edited and
+      saved the "<tt>HelloWorld.java</tt>" program. Compile it as follows:
+    </td>
+  </tr>
+</tbody></table>
+
+</p><pre>stutest@sf3:~[474]$ javac HelloWorld.java
+</pre>
+
+<p>
+<tt>javac</tt> is a compiler included with Sun's JDK (Java Development Kit). 
+It translates the source file into Java byte-codes. Java being an interpreted
+language, reduces your program into byte-codes which are to be interpreted
+by a Java virtual machine. The compiler stores these byte-codes in a
+'.class' file. To execute the application, the Java interpreter will run
+this '.class' file.
+
+</p><p>
+If there were any syntactical errors in your program, <tt>javac</tt> will
+display the reason for errors along with the line numbers where the errors
+occur. Edit and re-compile your source code until <tt>javac</tt> exits cleanly
+without any errors. Recall you can suspend and resume pico/nano (see
+<a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#unix_fgbg">3.13</a>) to help you with this back 
+and forth process.
+
+</p><p>
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+      Run the <tt>HelloWorld</tt> program:
+    </td>
+  </tr>
+</tbody></table>
+
+</p><pre>stutest@sf3:~[475]$ java HelloWorld     
+Hello world!
+stutest@sf3:~[476]$
+</pre>
+
+<p>
+If everything goes smoothly, the message "<tt>Hello World!</tt>", followed by a
+newline should appear on your screen. You've just compiled and executed your
+first application.
+
+</p><p>
+<a name="section8"></a>
+</p><h1>8 Graphical User Interfaces with X-Windows </h1>
+<p>
+If you're used to mouse-driven graphical user interfaces (GUI) and didn't
+fancy pico/nano's keystrokes-driven interface, then this section is for you.
+The problem with GUI applications is that they tend to consume large
+bandwidth over the network and is therefore not suitable if your network
+connection is slow (eg. when logged on to <i>sunfire</i> from home).
+
+</p><p>
+<a name="section8_1"></a>
+</p><h2>8.1 Forwarding X11 connections using X-Win32 </h2>
+<p>
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+      Make sure X-Win32 is installed in your system. If it isn't, install 
+      it from NUSNET web shopping:
+      <a href="http://helpdesk.nus.edu.sg/webshop/user/webshop.htm">http://helpdesk.nus.edu.sg/webshop/user/webshop.htm</a>.
+    </td>
+  </tr>
+</tbody></table>
+
+</p><p>
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+      With X-Win32 installed, you should see "X-Win32 5.4" in Windows' start
+      menu. First run X-config for X-Win32 
+      (Start -&gt; X-Win32 5.4 -&gt; X-Config). You do not need to setup 
+      any sessions. Under the Sessions tab, if you have any
+      sessions listed, use the Remove button to delete them. Under the 
+      Window tab, select Multiple. Under security, make sure <i>only</i> 
+      localhost is in the X-Host list. Uncheck Access Control and check 
+      XAuth (see image below). Click OK to save this
+      configuration and exit the X-Config utility.
+    </td>
+  </tr>
+</tbody></table>
+
+</p><p>
+</p><div align="center">
+  <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/xwin_access_control.gif" src="xwin_access_control.gif" alt="xwin_access_control.gif" align="middle">
+</div>
+
+<p>
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+      Now start the X-Win32 server on your system: 
+      Start -&gt; X-Win32 5.4 -&gt; X-Win32. If you see a "Connect Method" 
+      dialog, click "Cancel". You should now see a little blue "X" icon 
+      at the system tray (bottom-right of your Windows taskbar).
+    </td>
+  </tr>
+</tbody></table>
+
+</p><p>
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+      Return to your ssh shell client window, click 
+      Edit -&gt; Settings -&gt; Tunneling and make sure "TunnelX11 connections" 
+      is checked.
+    </td>
+  </tr>
+</tbody></table>
+
+</p><p>
+</p><div align="center">
+  <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/ssh_xtunnel.gif" src="ssh_xtunnel.gif" alt="ssh_xtunnel.gif" align="middle">
+</div>
+
+<p>
+<table cellpadding="3">
+  <tbody><tr>
+    <td align="center">
+      <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/do_it.gif" src="do_it.gif" alt="do_it.gif" align="middle">
+    </td>
+    <td align="left">
+      Exit your ssh shell and log on to <i>sunfire</i> again. You should 
+      now be able to run GUI-based programs from <i>sunfire</i> and have 
+      the graphical window displayed on your PC. 
+      Try, "<tt>nedit HelloWorld.java</tt>".
+    </td>
+  </tr>
+</tbody></table>
+
+</p><p>
+</p><div align="center">
+  <img ilo-full-src="http://www.comp.nus.edu.sg/~cs1101x/3_ca/labs/lab0/images/nedit_ssh.gif" src="nedit_ssh.gif" alt="nedit_ssh.gif" align="middle">
+</div>
+
+<p>
+At this point you might want to put <tt>nedit</tt> into the background (see
+<a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#unix_fgbg">3.13</a>). Since you now have two 
+windows, you can reserve the shell window for Java compilation or execution.
+
+</p><p>
+You may choose to use <tt>nedit</tt> to do your CS1101 programming if you wish,
+bearing in mind any bandwidth constraints that you may have (ie. don't try
+this at home). Using <tt>nedit</tt> should be easy enough and I'll leave it to
+you to figure it out.
+
+</p><p>
+<a name="section9"></a>
+</p><h1>9 More practice </h1>
+<p>
+The following are a few simple Java programs with parts of it missing (the
+underlined portions). You should try to understand the codes and fill in the
+blanks, type (or cut and paste) them into your chosen editor, and try out
+the compilation and execution process.
+
+</p><p>
+As you might not have known much about Java yet, you may come back to
+attempt the exercises here later.
+
+</p><p>
+You are reminded that your .java filename must correspond to the public
+class name in the file.
+
+</p><p>
+<a name="section9_1"></a>
+</p><h2>9.1 Text to Numeric input </h2>
+<p>
+<b>Task</b>: Write a program that reads in two integers from the user and
+output the larger of the two. 
+(<a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/Lab0Q1.java" target="_blank">Lab0Q1.java</a>)
+
+</p><p>
+</p><pre>import java.util.*;
+
+public class Lab0Q1 {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter first integer: ");
+        int n1 = scanner.nextInt();
+
+        System.out.print("Enter second integer: ");
+        ____ n2 = scanner.nextInt();
+        
+        _______________("The larger number is: ");
+        if (n1 &gt; n2) {
+            System.out.println(n1);
+        } else {
+            System.out.println(n2);
+        }
+    }
+}
+</pre>
+
+<p>
+Sample output:
+</p><pre>$ javac Lab0Q1.java
+$ java Lab0Q1
+<font color="#0000ff">Enter first integer:</font> 10
+<font color="#0000ff">Enter second integer:</font> 14
+<font color="#0000ff">The larger number is: 14</font>
+</pre>
+
+<p>
+<a name="section9_2"></a>
+</p><h2>9.2 Reading <tt>System.in</tt> till end-of-input </h2>
+
+<p>
+<b>Task</b>: Write a program that echos every line that the user enters until
+the end of input. Note: Press <tt>ctrl-d</tt> to indicate the end of an input
+stream from <tt>System.in</tt>.
+(<a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/Lab0Q2.java" target="_blank">Lab0Q2.java</a>)
+
+</p><pre>import java.util.*;
+
+public class Lab0Q2 {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        ________ line;
+        
+        do {
+            line = scanner.nextLine(); 
+            System.out.println("You entered: " + ______);
+        }
+        while (scanner.hasNextLine());
+
+        System.out.println("Goodbye!");
+    }
+}
+</pre>
+
+<p>
+Sample output:
+</p><pre>$ javac Lab0Q2.java
+$ java Lab0Q2
+Hello
+<font color="#0000ff">You entered: Hello</font>
+there
+<font color="#0000ff">You entered: there</font>
+How are you?
+<font color="#0000ff">You entered: How are you?</font>
+<font color="#ff0099">&lt;&lt;User presses ctrl-d here&gt;&gt;</font>
+<font color="#0000ff">Goodbye!</font>
+</pre>
+
+<p>
+<a name="section9_3"></a>
+</p><h2>9.3 Reading an input file through <tt>System.in</tt> </h2>
+<p>
+<b>Task</b>: Given a text data file (data.txt), run the file through the same
+program above. Note: unlike interactive keyboard input, you don't have to
+press <tt>ctrl-d</tt> to indicate end of input.
+(<a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/data.txt" target="_blank">data.txt</a>)
+
+</p><p>
+Sample output:
+</p><pre>$ cat data.txt
+<font color="#0000ff">The quick brown fox</font>
+<font color="#0000ff"> jumps over</font>
+<font color="#0000ff">the  lazy  dog</font>
+$ java Lab0Q2 &lt; data.txt
+<font color="#0000ff">You entered: The quick brown fox</font>
+<font color="#0000ff">You entered:  jumps over</font>
+<font color="#0000ff">You entered: the  lazy  dog</font>
+<font color="#0000ff">Goodbye!</font>
+</pre>
+
+<p>
+<a name="section9_4"></a>
+</p><h2>9.4 Simple integer arithmetic </h2>
+
+<p>
+<b>Task</b>: Compute the following statistics of a given data file: (1)
+maximum line length, (2) total number of lines.
+(<a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/Lab0Q3.java" target="_blank">Lab0Q3.java</a>)
+
+</p><p>
+</p><pre>import java.util.*;
+
+_____ _____ ______ {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        String line;
+        ___ maxLength = 0, numLines = 0;
+
+        do {
+            line = scanner.nextLine(); 
+            numLines++;
+            maxLength = Math.max(_________, line.length());
+        }
+        while (scanner.hasNextLine());
+
+        System.out.println("Number of lines = " + ________);
+        System.out.println("Maximum line length = " + maxLength);
+    }
+}
+</pre>
+
+<p>
+Sample output:
+</p><pre>$ java Lab0Q3 &lt; data.txt
+<font color="#0000ff">Number of lines = 3</font>
+<font color="#0000ff">Maximum line length = 19</font>
+</pre>
+
+<p>
+<br></p><hr>
+<!--Table of Child-Links-->
+
+<ul>
+  <li><a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#section1">1 Introduction</a>
+  <br><br>
+  </li><li><a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#section2">2 Accessing <i>sunfire</i></a>
+  <ul>
+    <li><a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#section2_1">2.1 Logging into NUSNET</a>
+    </li><li><a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#section2_2">2.2 Logging (ssh) into <i>sunfire</i></a>
+  </li></ul>
+  <br>
+  </li><li><a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#section3">3 Common UNIX commands</a>
+  <ul>
+    <li><a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#section3_1">3.1 <tt>echo, cat, &gt;, &gt;&gt;, &lt;</tt></a>
+    </li><li><a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#section3_2">3.2 <tt>history</tt></a>
+    </li><li><a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#section3_3">3.3 <tt>ls</tt></a>
+    </li><li><a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#section3_4">3.4 <tt>man</tt></a>
+    </li><li><a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#section3_5">3.5 <tt>cd, mkdir, rmdir, pwd</tt></a>
+    </li><li><a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#section3_6">3.6 <tt>cp, mv, rm</tt></a>
+    </li><li><a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#section3_7">3.7 <tt>chmod</tt></a>
+    </li><li><a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#section3_8">3.8 <tt>less</tt></a>
+    </li><li><a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#section3_9">3.9 Printing commands: <tt>lpr, lpq, lprm, lpstat</tt></a>
+    </li><li><a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#section3_10">3.10 <tt>who, finger</tt></a>
+    </li><li><a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#section3_11">3.11 <tt>quota</tt></a>
+    </li><li><a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#section3_12">3.12 Killing processes: <tt>ps, kill, ctrl-c, ctrl-\</tt></a>
+    </li><li><a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#section3_13">3.13 Controlling processes: <tt>ctrl-z, jobs, fg, bg</tt></a>
+    </li><li><a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#section3_14">3.14 Changing password</a>
+    </li><li><a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#section3_15">3.15 What if I forget my password?</a>
+    </li><li><a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#section3_16">3.16 <tt>exit,logout</tt></a>
+  </li></ul> 
+  <br>
+  </li><li><a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#section4">4 File Transfer</a>
+  <br><br>
+  </li><li><a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#section5">5 Samba services from UNIX</a>
+  <br><br>
+  </li><li><a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#section6">6 Editing text files in UNIX</a>
+  <ul>
+    <li><a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#section6_1">6.1 Introduction to pico/nano</a>
+    </li><li><a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#section6_2">6.2 <tt>alias</tt>ing frequently used commands</a>
+  </li></ul>
+  <br>
+  </li><li><a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#section7">7 Java programming using JDK</a>
+  <ul>
+    <li><a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#section7_1">7.1 Edit, Compile, Run</a>
+  </li></ul>
+  <br>
+  </li><li><a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#section8">8 Graphical User Interfaces with X-Windows</a>
+  <ul>
+    <li><a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#section8_1">8.1 Forwarding X11 connections using X-Win32</a>
+  </li></ul>
+  <br>
+  </li><li><a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#section9">9 More practice</a>
+  <ul>
+    <li><a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#section9_1">9.1 Text to Numeric input</a>
+    </li><li><a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#section9_2">9.2 Reading <tt>System.in</tt> till end-of-input</a>
+    </li><li><a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#section9_3">9.3 Reading an input file through <tt>System.in</tt></a>
+    </li><li><a href="http://www.comp.nus.edu.sg/%7Ecs1101x/3_ca/labs/lab0/unix_intro.html#section9_4">9.4 Simple integer arithmetic</a>
+  </li></ul>
+</li></ul>
+
+<!--End of Table of Child-Links-->
+
+<br><hr>
+<address>
+tantc@comp.nus.edu.sg<br>
+16 August 2007
+</address>
+
+
+</body></html>
