@@ -1,10 +1,11 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.7.8)  5 AUG 2009 18:09
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.7.2)  30 JUL 2010 11:16
 entering extended mode
+ restricted \write18 enabled.
  %&-line parsing enabled.
 **slides.tex
 (./slides.tex
-LaTeX2e <2005/12/01>
-Babel <v3.8h> and hyphenation patterns for english, usenglishmax, dumylang, noh
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
 yphenation, loaded.
 (/usr/share/texmf/tex/latex/beamer/base/beamer.cls
 (/usr/share/texmf/tex/latex/beamer/base/beamerbasercs.sty
@@ -81,18 +82,18 @@ Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
-Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
 (/etc/texmf/tex/latex/config/graphics.cfg
-File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
 )
-Package graphics Info: Driver file: pdftex.def on input line 90.
+Package graphics Info: Driver file: pdftex.def on input line 91.
 
 (/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2007/01/08 v0.04d Graphics/color for pdfTeX
+File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
 \Gread@gobject=\count102
 ))
 \Gin@req@height=\dimen119
@@ -267,18 +268,27 @@ Package: xxcolor 2003/10/24 ver 0.1
 \XC@countmixins=\count115
 )
 (/usr/share/texmf-texlive/tex/latex/amsfonts/amssymb.sty
-Package: amssymb 2002/01/22 v2.2d
+Package: amssymb 2009/06/22 v3.00
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
-Package: amsfonts 2001/10/25 v2.2f
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 \@emptytoks=\toks19
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 132.
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
 ))
 (/usr/share/texmf-texlive/tex/latex/geometry/geometry.sty
-Package: geometry 2002/07/08 v3.2 Page Geometry
+Package: geometry 2008/12/21 v4.2 Page Geometry
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2009/04/10 v2.0 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in pdf mode detected.
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2008/11/04 v1.4 Switches for detecting VTeX and its modes (HO)
+Package ifvtex Info: VTeX not detected.
+)
 \Gm@cnth=\count116
 \Gm@cntv=\count117
 \c@Gm@tempcnt=\count118
@@ -289,48 +299,103 @@ Package: geometry 2002/07/08 v3.2 Page Geometry
 \Gm@dimlist=\toks20
 )
 (/usr/share/texmf-texlive/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2007/02/07 v6.75r Hypertext links for LaTeX
+Package: hyperref 2009/10/09 v6.79a Hypertext links for LaTeX
+
+(/usr/share/texmf-texlive/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2009/01/23 v0.5 Provides ifxetex conditional
+)
+(/usr/share/texmf-texlive/tex/latex/oberdiek/hycolor.sty
+Package: hycolor 2009/10/02 v1.5 Code for color options of hyperref/bookmark (H
+O)
+
+(/usr/share/texmf-texlive/tex/latex/oberdiek/xcolor-patch.sty
+Package: xcolor-patch 2009/10/02 xcolor patch
+))
 \@linkdim=\dimen157
 \Hy@linkcounter=\count119
 \Hy@pagecounter=\count120
 
 (/usr/share/texmf-texlive/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2007/02/07 v6.75r Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2009/10/09 v6.79a Hyperref: PDFDocEncoding definition (HO)
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2007/12/12 v1.2 Prefix for e-TeX command names (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2007/09/09 v1.2 Providing info/warning/message (HO)
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
 )
 (/etc/texmf/tex/latex/config/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 (/usr/share/texmf-texlive/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2006/08/22 v2.4 Connects package keyval with LaTeX options (
-HO)
-)
-Package hyperref Info: Option `bookmarks' set `true' on input line 2238.
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 2238.
-Package hyperref Info: Option `implicit' set `false' on input line 2238.
-Package hyperref Info: Hyper figures OFF on input line 2288.
-Package hyperref Info: Link nesting OFF on input line 2293.
-Package hyperref Info: Hyper index ON on input line 2296.
-Package hyperref Info: Plain pages OFF on input line 2303.
-Package hyperref Info: Backreferencing OFF on input line 2308.
+Package: kvoptions 2009/08/13 v3.4 Keyval support for LaTeX options (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2009/07/30 v1.5 Key value parser with default handler suppor
+t (HO)
+))
+Package hyperref Info: Option `bookmarks' set `true' on input line 2864.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 2864.
+Package hyperref Info: Option `implicit' set `false' on input line 2864.
+Package hyperref Info: Hyper figures OFF on input line 2975.
+Package hyperref Info: Link nesting OFF on input line 2980.
+Package hyperref Info: Hyper index ON on input line 2983.
+Package hyperref Info: Plain pages OFF on input line 2990.
+Package hyperref Info: Backreferencing OFF on input line 2995.
 
 Implicit mode OFF; no redefinition of LaTeX internals
-Package hyperref Info: Bookmarks ON on input line 2444.
+Package hyperref Info: Bookmarks ON on input line 3191.
 (/usr/share/texmf-texlive/tex/latex/ltxmisc/url.sty
 \Urlmuskip=\muskip10
-Package: url 2005/06/27  ver 3.2  Verb mode for urls, etc.
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 2599.
+LaTeX Info: Redefining \url on input line 3428.
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/bitset.sty
+Package: bitset 2007/09/28 v1.0 Data type bit set (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/intcalc.sty
+Package: intcalc 2007/09/27 v1.1 Expandable integer calculations (HO)
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/bigintcalc.sty
+Package: bigintcalc 2007/11/11 v1.1 Expandable big integer calculations (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2009/09/23 v0.6 LuaTeX support for pdfTeX utility functions
+ (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2009/04/17 v1.2 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2009/08/05 v1.0 Some LaTeX kernel commands for general use (HO
+)
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+)))
 \Fld@menulength=\count121
 \Field@Width=\dimen158
 \Fld@charsize=\dimen159
-\Choice@toks=\toks21
-\Field@toks=\toks22
-Package hyperref Info: Hyper figures OFF on input line 3102.
-Package hyperref Info: Link nesting OFF on input line 3107.
-Package hyperref Info: Hyper index ON on input line 3110.
-Package hyperref Info: backreferencing OFF on input line 3117.
-Package hyperref Info: Link coloring OFF on input line 3122.
+\Field@toks=\toks21
+Package hyperref Info: Hyper figures OFF on input line 4377.
+Package hyperref Info: Link nesting OFF on input line 4382.
+Package hyperref Info: Hyper index ON on input line 4385.
+Package hyperref Info: backreferencing OFF on input line 4392.
+Package hyperref Info: Link coloring OFF on input line 4397.
+Package hyperref Info: Link coloring with OCG OFF on input line 4402.
+Package hyperref Info: PDF/A mode OFF on input line 4407.
 
+(/usr/share/texmf-texlive/tex/generic/oberdiek/atbegshi.sty
+Package: atbegshi 2008/07/31 v1.9 At begin shipout hook (HO)
+)
 
 Package hyperref Warning: Option `pdfpagelabels' is turned off
 (hyperref)                because \thepage is undefined.
@@ -339,11 +404,11 @@ Hyperref stopped early
 )
 *hyperref using default driver hpdftex*
 (/usr/share/texmf-texlive/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2007/02/07 v6.75r Hyperref driver for pdfTeX
+File: hpdftex.def 2009/10/09 v6.79a Hyperref driver for pdfTeX
 \Fld@listcount=\count122
 )
 (/usr/share/texmf-texlive/tex/latex/base/size11.clo
-File: size11.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
+File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 (/usr/share/texmf/tex/latex/beamer/base/beamerbasecompatibility.sty
 Package: beamerbasecompatibility 2007/01/28  (rcs-revision 1.63)
@@ -387,7 +452,7 @@ Package: beamerbaseframe 2007/01/28  (rcs-revision 1.60)
 \beamer@framebottomskip=\skip44
 \beamer@frametopskipautobreak=\skip45
 \beamer@framebottomskipautobreak=\skip46
-\beamer@envbody=\toks23
+\beamer@envbody=\toks22
 \c@framenumber=\count133
 )
 (/usr/share/texmf/tex/latex/beamer/base/beamerbaseverbatim.sty
@@ -399,8 +464,8 @@ Package: beamerbaseframesize 2007/01/28  (rcs-revision 1.18)
 \beamer@splitbox=\box42
 \beamer@autobreakcount=\count134
 \beamer@autobreaklastheight=\dimen161
-\beamer@frametitletoks=\toks24
-\beamer@framesubtitletoks=\toks25
+\beamer@frametitletoks=\toks23
+\beamer@framesubtitletoks=\toks24
 )
 (/usr/share/texmf/tex/latex/beamer/base/beamerbaseframecomponents.sty
 Package: beamerbaseframecomponents 2007/01/28  (rcs-revision 1.41)
@@ -418,7 +483,7 @@ Package: beamerbasetoc 2007/01/28  (rcs-revision 1.21)
 )
 (/usr/share/texmf/tex/latex/beamer/base/beamerbasetemplates.sty
 Package: beamerbasetemplates 2007/01/28  (rcs-revision 1.51)
-\beamer@sbttoks=\toks26
+\beamer@sbttoks=\toks25
 
 (/usr/share/texmf/tex/latex/beamer/base/beamerbaseauxtemplates.sty
 Package: beamerbaseauxtemplates 2007/01/28  (rcs-revision 1.28)
@@ -442,7 +507,7 @@ Package: beamerbaselocalstructure 2007/01/28  (rcs-revision 1.53)
 
 (/usr/share/texmf-texlive/tex/latex/tools/enumerate.sty
 Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
-\@enLab=\toks27
+\@enLab=\toks26
 )
 \c@figure=\count135
 \c@table=\count136
@@ -455,7 +520,11 @@ Package: beamerbasenavigation 2007/01/28  (rcs-revision 1.36)
 (/usr/share/texmf/tex/latex/beamer/base/beamerbasetheorems.sty
 Package: beamerbasetheorems 2007/01/28  (rcs-revision 1.10)
 
-(/usr/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
+(/usr/share/texmf-texlive/tex/latex/translator/translator.sty
+Package: translator 2007/03/11 ver 1.00
+
+(/usr/share/texmf-texlive/tex/latex/translator/translator-language-mappings.tex
+)) (/usr/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2000/07/18 v2.13 AMS math features
 \@mathmargin=\skip49
 
@@ -465,7 +534,7 @@ Package: amstext 2000/06/29 v2.01
 
 (/usr/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks28
+\@emptytoks=\toks27
 \ex@=\dimen167
 ))
 (/usr/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
@@ -495,35 +564,35 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 \dotsspace@=\muskip11
 \c@parentequation=\count144
 \dspbrk@lvl=\count145
-\tag@help=\toks29
+\tag@help=\toks28
 \row@=\count146
 \column@=\count147
 \maxfields@=\count148
-\andhelp@=\toks30
+\andhelp@=\toks29
 \eqnshift@=\dimen170
 \alignsep@=\dimen171
 \tagshift@=\dimen172
 \tagwidth@=\dimen173
 \totwidth@=\dimen174
 \lineht@=\dimen175
-\@envbody=\toks31
+\@envbody=\toks30
 \multlinegap=\skip50
 \multlinetaggap=\skip51
-\mathdisplay@stack=\toks32
+\mathdisplay@stack=\toks31
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
 (/usr/share/texmf-texlive/tex/latex/amscls/amsthm.sty
 Package: amsthm 2004/08/06 v2.20
-\thm@style=\toks33
-\thm@bodyfont=\toks34
-\thm@headfont=\toks35
-\thm@notefont=\toks36
-\thm@headpunct=\toks37
+\thm@style=\toks32
+\thm@bodyfont=\toks33
+\thm@headfont=\toks34
+\thm@notefont=\toks35
+\thm@headpunct=\toks36
 \thm@preskip=\skip52
 \thm@postskip=\skip53
 \thm@headsep=\skip54
-\dth@everypar=\toks38
+\dth@everypar=\toks37
 )
 \c@theorem=\count149
 )
@@ -549,162 +618,186 @@ Package: beamerouterthemedefault 2007/01/28  (rcs-revision 1.14)
 )))
 (./UNIX.tex (/usr/share/texmf-texlive/tex/latex/tools/verbatim.sty
 Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks39
-\verbatim@line=\toks40
+\every@verbatim=\toks38
+\verbatim@line=\toks39
 \verbatim@in@stream=\read1
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 10.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\begingroup' on input line 37.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\catcode' on input line 37.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\active' on input line 37.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\<def>-command' on input line 37.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\csname\endcsname' on input line 37.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\catcode' on input line 37.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\active' on input line 37.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\<let>-command' on input line 37.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\csname\endcsname' on input line 37.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\<let>-command' on input line 37.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\%' on input line 37.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\catcode' on input line 37.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\active' on input line 37.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\<def>-command' on input line 37.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\csname\endcsname' on input line 37.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\<def>-command' on input line 37.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\#' on input line 37.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\catcode' on input line 37.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\<def>-command' on input line 37.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\csname\endcsname' on input line 37.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\<def>-command' on input line 37.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\&' on input line 37.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\<def>-command' on input line 37.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\textunderscore' on input line 37.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\<let>-command' on input line 37.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\_' on input line 37.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\catcode' on input line 37.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\active' on input line 37.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\<let>-command' on input line 37.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\csname\endcsname' on input line 37.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\<let>-command' on input line 37.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\csname\endcsname' on input line 37.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\<let>-command' on input line 37.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\~' on input line 37.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\<let>-command' on input line 37.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\textasciitilde' on input line 37.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\<let>-command' on input line 37.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\\' on input line 37.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\<def>-command' on input line 37.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\csname\endcsname' on input line 37.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\<def>-command' on input line 37.
 
 
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\Hy@tempa' on input line 37.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\<def>-command' on input line 37.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\Hy@tempa' on input line 37.
 
 (./slides.aux)
@@ -724,6 +817,21 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
 LaTeX Font Info:    ... okay on input line 37.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 37.
 LaTeX Font Info:    ... okay on input line 37.
+ (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count150
+\scratchdimen=\dimen178
+\scratchbox=\box52
+\nofMPsegments=\count151
+\nofMParguments=\count152
+\everyMPshowfont=\toks40
+\MPscratchCnt=\count153
+\MPscratchDim=\dimen179
+\MPnumerator=\count154
+\everyMPtoPDFconversion=\toks41
+)
+*geometry auto-detecting driver*
+*geometry detected driver: pdftex*
 -------------------- Geometry parameters
 paper: user defined
 landscape: --
@@ -764,13 +872,13 @@ driver: pdftex
 (1in=72.27pt, 1cm=28.45pt)
 -----------------------
 Package hyperref Info: Link coloring ON on input line 37.
- (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
-Package: nameref 2006/12/27 v2.28 Cross-referencing by name of section
+(/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
+Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 
 (/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
-Package: refcount 2006/02/20 v3.0 Data extraction from references (HO)
+Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
-\c@section@level=\count150
+\c@section@level=\count155
 )
 LaTeX Info: Redefining \ref on input line 37.
 LaTeX Info: Redefining \pageref on input line 37.
@@ -779,6 +887,7 @@ LaTeX Info: Redefining \pageref on input line 37.
 \@outlinefile=\write4
 \openout4 = `slides.out'.
 
+\AtBeginShipoutBox=\box53
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 37.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
@@ -821,16 +930,18 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 37.
- (./slides.nav)
-LaTeX Font Info:    Try loading font information for U+msa on input line 45.
 
-(/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2002/01/19 v2.2g AMS font definitions
+(/usr/share/texmf-texlive/tex/latex/translator/translator-theorem-dictionary-En
+glish.dict
+Dictionary: translator-theorem-dictionary, Language: English 
+) (./slides.nav)
+LaTeX Font Info:    Try loading font information for U+msa on input line 45.
+ (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 45.
-
-(/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2002/01/19 v2.2g AMS font definitions
+ (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
@@ -847,7 +958,7 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 
 ] [5
 
-] <../figures/os-layers.png, id=214, 459.21562pt x 202.50656pt>
+] <../figures/os-layers.png, id=210, 459.21562pt x 202.50656pt>
 File: ../figures/os-layers.png Graphic file (type png)
 
 <use ../figures/os-layers.png> [6
@@ -855,19 +966,19 @@ File: ../figures/os-layers.png Graphic file (type png)
  <../figures/os-layers.png>] (./slides.toc)
 [7
 
-] <../figures/dennis-ken2.jpg, id=278, 47.12004pt x 37.72495pt>
+] <../figures/dennis-ken2.jpg, id=274, 47.12004pt x 37.72495pt>
 File: ../figures/dennis-ken2.jpg Graphic file (type jpg)
 
 <use ../figures/dennis-ken2.jpg> [8
 
  <../figures/dennis-ken2.jpg>]
-<../figures/dennis-ken3.png, id=304, 469.755pt x 297.11pt>
+<../figures/dennis-ken3.png, id=300, 469.755pt x 297.11pt>
 File: ../figures/dennis-ken3.png Graphic file (type png)
 
 <use ../figures/dennis-ken3.png> [9
 
  <../figures/dennis-ken3.png (PNG copy)>]
-<../figures/unix_timeline.png, id=331, 657.45625pt x 560.0925pt>
+<../figures/unix_timeline.png, id=327, 657.45625pt x 560.0925pt>
 File: ../figures/unix_timeline.png Graphic file (type png)
 
 <use ../figures/unix_timeline.png> [10
@@ -878,11 +989,11 @@ File: ../figures/unix_timeline.png Graphic file (type png)
 ] (./slides.toc) [12
 
 ]
-<../figures/ctrl_alt_delete.png, id=431, 422.57875pt x 220.825pt>
+<../figures/ctrl_alt_delete.png, id=428, 422.57875pt x 220.825pt>
 File: ../figures/ctrl_alt_delete.png Graphic file (type png)
 
 <use ../figures/ctrl_alt_delete.png>
-<../figures/stu_login.png, id=432, 420.57124pt x 294.09875pt>
+<../figures/stu_login.png, id=429, 420.57124pt x 294.09875pt>
 File: ../figures/stu_login.png Graphic file (type png)
 
 <use ../figures/stu_login.png> [13
@@ -895,7 +1006,7 @@ y)>] [14
 ] (./slides.toc) [16
 
 ]
-<../figures/mysoc_webmail.png, id=549, 1017.8025pt x 788.9475pt>
+<../figures/mysoc_webmail.png, id=546, 1017.8025pt x 788.9475pt>
 File: ../figures/mysoc_webmail.png Graphic file (type png)
 
 <use ../figures/mysoc_webmail.png> [17
@@ -903,140 +1014,146 @@ File: ../figures/mysoc_webmail.png Graphic file (type png)
  <../figures/mysoc_webmail.png>]
 (./slides.toc) [18
 
-] <../figures/machine_room.jpg, id=613, 481.8pt x 361.35pt>
+] <../figures/machine_room.jpg, id=610, 481.8pt x 361.35pt>
 File: ../figures/machine_room.jpg Graphic file (type jpg)
 
 <use ../figures/machine_room.jpg> [19
 
  <../figures/machine_room.jpg>]
-<../figures/ssh_sunfire.png, id=641, 605.26125pt x 511.9125pt>
+<../figures/ssh_sunfire.png, id=638, 605.26125pt x 511.9125pt>
 File: ../figures/ssh_sunfire.png Graphic file (type png)
 
 <use ../figures/ssh_sunfire.png> [20
 
  <../figures/ssh_sunfire.png (PNG copy)>]
-[21
+<../figures/ssh_command_line.png, id=665, 448.67625pt x 373.395pt>
+File: ../figures/ssh_command_line.png Graphic file (type png)
 
-] [22
+<use ../figures/ssh_command_line.png> [21
 
-] [23
+ <../figures/ssh_command_line.png (PNG copy)>] [22
 
-] (./slides.toc) [24
+] (./slides.toc) [23
 
 ]
-<../figures/vim.png, id=778, 664.4825pt x 690.58pt>
+<../figures/vim.png, id=751, 664.4825pt x 690.58pt>
 File: ../figures/vim.png Graphic file (type png)
  <use ../figures/vim.png>
-[25
+[24
 
  <../figures/vim.png>]
-<../figures/vim_modes.png, id=806, 552.0625pt x 467.7475pt>
+<../figures/vim_modes.png, id=778, 552.0625pt x 467.7475pt>
 File: ../figures/vim_modes.png Graphic file (type png)
 
-<use ../figures/vim_modes.png> [26
+<use ../figures/vim_modes.png> [25
 
  <../figures/vim_modes.png>]
-Overfull \hbox (21.90005pt too wide) in paragraph at lines 430--430
+Overfull \hbox (21.90005pt too wide) in paragraph at lines 408--408
 [][][][][][][]  
  []
 
 
-Overfull \hbox (21.90005pt too wide) in paragraph at lines 430--430
+Overfull \hbox (21.90005pt too wide) in paragraph at lines 408--408
 [][][][][][][]  
  []
 
 
-Overfull \hbox (21.90005pt too wide) in paragraph at lines 430--430
+Overfull \hbox (21.90005pt too wide) in paragraph at lines 408--408
 [][][][][][][]  
  []
 
 
-Overfull \hbox (21.90005pt too wide) in paragraph at lines 430--430
+Overfull \hbox (21.90005pt too wide) in paragraph at lines 408--408
 [][][][][][][]  
  []
 
-[27
+[26
 
-] (./slides.toc) [28
+] (./slides.toc) [27
 
 ]
-<../figures/file_home.png, id=894, 684.5575pt x 428.60126pt>
+<../figures/file_home.png, id=867, 684.5575pt x 428.60126pt>
 File: ../figures/file_home.png Graphic file (type png)
 
-<use ../figures/file_home.png> [29
+<use ../figures/file_home.png> [28
 
  <../figures/file_home.png>]
-Overfull \hbox (21.90005pt too wide) in paragraph at lines 474--474
+Overfull \hbox (21.90005pt too wide) in paragraph at lines 447--447
 [][][][][][][]  
  []
 
-
-Overfull \hbox (21.90005pt too wide) in paragraph at lines 474--474
-[][][][][][][]  
- []
-
-
-Overfull \hbox (21.90005pt too wide) in paragraph at lines 474--474
-[][][][][][][]  
- []
-
-
-Overfull \hbox (21.90005pt too wide) in paragraph at lines 474--474
-[][][][][][][]  
- []
-
-
-Overfull \hbox (21.90005pt too wide) in paragraph at lines 474--474
-[][][][][][][]  
- []
-
-
-Overfull \hbox (21.90005pt too wide) in paragraph at lines 474--474
-[][][][][][][]  
- []
-
-[30
-
-] [31
-
-
-] [32
-
-
-] (./slides.toc) [33
+[29
 
 ]
-<../figures/printer.jpg, id=1034, 165.61874pt x 174.6525pt>
+\openout3 = `slides.vrb'.
+
+ (./slides.vrb) [30
+
+]
+\openout3 = `slides.vrb'.
+
+ (./slides.vrb) [31
+
+]
+Overfull \hbox (21.90005pt too wide) in paragraph at lines 510--510
+[][][][][][][]  
+ []
+
+[32
+
+]
+\openout3 = `slides.vrb'.
+
+ (./slides.vrb) [33
+
+] (./slides.vrb) [34
+
+]
+\openout3 = `slides.vrb'.
+
+ (./slides.vrb) [35
+
+] (./slides.vrb) [36
+
+] (./slides.vrb) [37
+
+] (./slides.vrb) [38
+
+] (./slides.vrb) [39
+
+] (./slides.toc) [40
+
+] <../figures/printer.jpg, id=1206, 165.61874pt x 174.6525pt>
 File: ../figures/printer.jpg Graphic file (type jpg)
 
 <use ../figures/printer.jpg>
-Overfull \hbox (21.90005pt too wide) in paragraph at lines 507--507
+Overfull \hbox (21.90005pt too wide) in paragraph at lines 608--608
 [][][][][][][]  
  []
 
 
-Overfull \hbox (21.90005pt too wide) in paragraph at lines 507--507
+Overfull \hbox (21.90005pt too wide) in paragraph at lines 608--608
 [][][][][][][]  
  []
 
 
-Overfull \hbox (21.90005pt too wide) in paragraph at lines 507--507
+Overfull \hbox (21.90005pt too wide) in paragraph at lines 608--608
 [][][][][][][]  
  []
 
-[34
+[41
 
  <../figures/printer.jpg>]
-<../figures/mcilroy.jpg, id=1060, 220.825pt x 293.095pt>
+<../figures/mcilroy.jpg, id=1232, 220.825pt x 293.095pt>
 File: ../figures/mcilroy.jpg Graphic file (type jpg)
 
-<use ../figures/mcilroy.jpg> [35
+<use ../figures/mcilroy.jpg> [42
 
  <../figures/mcilroy.jpg>]
-<../figures/sms.jpg, id=1086, 467.7475pt x 276.03125pt>
+<../figures/sms.jpg, id=1258, 467.7475pt x 276.03125pt>
 File: ../figures/sms.jpg Graphic file (type jpg)
 
-<use ../figures/sms.jpg> [36
+<use ../figures/sms.jpg> [43
 
  <../figures/sms.jpg>]
 \openout3 = `slides.vrb'.
@@ -1056,65 +1173,65 @@ Overfull \hbox (1.56964pt too wide) in paragraph at lines 11--11
 []\OT1/cmtt/m/n/10.95 I went to ur hon lab but no[] 
  []
 
-) [37
+) [44
 
 ]
 \openout3 = `slides.vrb'.
 
- (./slides.vrb) [38
+ (./slides.vrb) [45
 
 ]
-Overfull \hbox (21.90005pt too wide) in paragraph at lines 632--632
+Overfull \hbox (21.90005pt too wide) in paragraph at lines 733--733
 [][][][][][][]  
  []
 
 
-Overfull \hbox (21.90005pt too wide) in paragraph at lines 632--632
+Overfull \hbox (21.90005pt too wide) in paragraph at lines 733--733
 [][][][][][][]  
  []
 
 
-Overfull \hbox (21.90005pt too wide) in paragraph at lines 632--632
+Overfull \hbox (21.90005pt too wide) in paragraph at lines 733--733
 [][][][][][][]  
  []
 
 
-Overfull \hbox (21.90005pt too wide) in paragraph at lines 632--632
+Overfull \hbox (21.90005pt too wide) in paragraph at lines 733--733
 [][][][][][][]  
  []
 
 
-Overfull \hbox (21.90005pt too wide) in paragraph at lines 632--632
+Overfull \hbox (21.90005pt too wide) in paragraph at lines 733--733
 [][][][][][][]  
  []
 
 
-Overfull \hbox (21.90005pt too wide) in paragraph at lines 632--632
+Overfull \hbox (21.90005pt too wide) in paragraph at lines 733--733
 [][][][][][][]  
  []
 
-[39
-
-] [40
-
-
-] [41
-
-
-]
-\openout3 = `slides.vrb'.
-
- (./slides.vrb) [42
-
-] (./slides.toc) [43
-
-] [44
-
-] [45
-
-] (./slides.toc) [46
+[46
 
 ] [47
+
+
+] [48
+
+
+]
+\openout3 = `slides.vrb'.
+
+ (./slides.vrb) [49
+
+] (./slides.toc) [50
+
+] [51
+
+] [52
+
+] (./slides.toc) [53
+
+] [54
 
 ]
 \tf@nav=\write5
@@ -1133,22 +1250,23 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) ) 
 Here is how much of TeX's memory you used:
- 11201 strings out of 95086
- 199254 string characters out of 1183256
- 266814 words of memory out of 1500000
- 13940 multiletter control sequences out of 10000+50000
- 16216 words of font info for 62 fonts, out of 1200000 for 2000
+ 13066 strings out of 495061
+ 228896 string characters out of 1182622
+ 304898 words of memory out of 3000000
+ 15722 multiletter control sequences out of 15000+50000
+ 16207 words of font info for 62 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 41i,15n,51p,330b,596s stack positions out of 5000i,500n,6000p,200000b,5000s
-</usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmss10.pfb></usr/share/tex
-mf-texlive/fonts/type1/bluesky/cm/cmss12.pfb></usr/share/texmf-texlive/fonts/ty
-pe1/bluesky/cm/cmssi10.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cms
-y10.pfb></usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmtt10.pfb></usr/share
-/texmf-texlive/fonts/type1/bluesky/cm/cmtt12.pfb></usr/share/texmf-texlive/font
-s/type1/bluesky/ams/msam7.pfb>
-Output written on slides.pdf (47 pages, 909041 bytes).
+ 45i,15n,51p,330b,599s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/s
+hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-
+texlive/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texmf-texlive/fo
+nts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/p
+ublic/amsfonts/cm/cmtt10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfo
+nts/cm/cmtt12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols
+/msam10.pfb>
+Output written on slides.pdf (54 pages, 1001781 bytes).
 PDF statistics:
- 1468 PDF objects out of 1728 (max. 8388607)
- 112 named destinations out of 1000 (max. 131072)
- 212 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1642 PDF objects out of 1728 (max. 8388607)
+ 126 named destinations out of 1000 (max. 500000)
+ 201 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -310,47 +310,25 @@ The shell is based on a command line interface (CLI), this is in contrast to the
 more commonly seen graphical user interface (GUI) which you are familiar with.
 Both types of interfaces are useful, depending on the kind of activity.  
 
-% CLI
-% + power of piping and redirection, greater control
-% + portable (available in many systems)
-% + least overhead
-% + easy remote access
-% + faster to get things done
-% + can be easily automated/scripted
-% - higher learning curve
-% - not easy to multi-task
+\begin{frame}{Command line interface}
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.25]{ssh_command_line}
+\end{center}
+\end{figure}
 
-% GUI
-% + display of dynamically modifiable information
-% + aesthetics
-% + media
-% + true multitasking
-% + more intuitive, easier to learn
+Launching program by typing name follow by parameters.  
+Programs as functions, f(x)
 
-%* You can do things very quickly on command line.
-%* GUI prevents you from understanding and learning the functionality happening behind the scenes.
-%* Repetitive things can be automated easily using command line.
+\end{frame}
 
-% GUI: WYSIWYG = WYSIAYG
-% CLI: suited to performing ad hoc operations, to quickly combine a few commands
-% to perform a query or some tasks
-
-\begin{frame}
-\ftitle{CLI vs GUI}
-\begin{block}{Graphical User Interface}
-What they tell you, WYSIWYG (What you see is what you get). \pause
-The truth is, WYSIAYG (What you see is all you get).
-\end{block}
-
-\pause
-
-\begin{block}{Command Line Interface}
+\begin{frame}{Command line interface}
 \begin{itemize}
-\item Suited to performing ad hoc operations by combining a few commands.  
-\item Easy to automate repetitive tasks.
-\item Default interface when accessing remote servers.  
+\item Silence is golden: there is usually no output when a program runs
+successfully
+\item Easy to automate repetitive tasks
+\item Default interface when accessing remote servers %not that important..
 \end{itemize}
-\end{block}
 \end{frame}
 
 
@@ -452,26 +430,149 @@ your homepage at \url{http://www.comp.nus.edu.sg/~unix_username}
 
 Sometimes you might want to share a file with your friends but it is too large
 to send through email. You can make use of the 2Gb in your UNIX account to host
-the file on your website. The following activity, shows you how to share a file
-on your personal website.  
+the file on your website. 
+
 
 % ACTIVITY
-\begin{frame}[allowframebreaks=0.6]{Activity: \texttt{sunfire} as a web host}
+\begin{frame}
+\frametitle{Activity: playing with \texttt{diff} and \texttt{grep} I}
 \begin{enumerate}
-\item Find out your home directory using the following command
-\cmd{pwd}
-\item Create a directory under your home directory named
-\texttt{public\_html}. \cmd{mkdir public\_html}
-\item Move \texttt{hello.txt} into the \texttt{public\_html} directory. \cmd{mv hello.txt public\_html}
-\item Change the permissions on \texttt{public\_html} so that it is readable by
-the web server. \cmd{chmod a+rx public\_html}
-\item Change your current directory to \texttt{public\_html}. \cmd{cd public\_html}
-\item Change the permission on \texttt{hello.txt} so that it is readable by the
-web server.  \cmd{chmod a+r hello.txt}
-\item Ask the person next to you to download hello.txt from your personal
-website at \url{http://www.comp.nus.edu.sg/~unix_username/hello.txt}
+\item What is \texttt{diff}? -- compare differences between files
+\item Text editing usually leaves a lot of backup files ending with \texttt{\~}.\\  
+One day you want to figure out the differences between a file \texttt{text} and its backup \texttt{text\~}...\\  
+Open in two editors and then eye-ball?
+\cmd{diff firstFile secondFile}
+\item A quick how-to
 \end{enumerate}
 \end{frame}
+% Or should we put it as :
+%\item How it works (and how to interprete output)
+
+
+
+\begin{frame}[fragile]
+\frametitle{Activity: playing with \texttt{diff} and \texttt{grep} II}
+Let's see how \texttt{text} and \texttt{text\~} look like first
+
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\\ Output of \texttt{cat text}
+
+\begin{verbatim}
+same text
+same text
+Hello World!
+still the same
+still the same
+\end{verbatim}
+\end{column}
+
+\begin{column}{0.5\textwidth}
+\\ Output of \texttt{cat text\~}
+\begin{verbatim}
+same text
+same text
+Hello World~
+still the same
+still the same
+\end{verbatim}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Activity: playing with \texttt{diff} and \texttt{grep} III}
+Output of \texttt{diff text text\~} :
+\begin{verbatim}
+3c3
+< Hello World!
+---
+> Hello World~
+\end{verbatim}
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Activity: playing with \texttt{diff} and \texttt{grep} IV}
+\begin{enumerate}
+\item What is \texttt{grep}? *-- look for a pattern in file(s)
+\cmd{grep pattern file}
+\item Sometimes it is useful to find the occurrences of some word in a (list of) file.\\ 
+Say you suspect a typo in you source code,\\ 
+open a text editor and 'Find'?
+\item But what if you made the same typo in a lot of files?\\
+'grep' makes your life easier\\
+Let's find out how to 'grep'
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Activity: playing with \texttt{diff} and \texttt{grep} V}
+Sample output of \texttt{grep h1 a.html}:
+
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\texttt{grep h1 a.html}
+
+\begin{verbatim}
+    <h1>Hello World!</h1>
+\end{verbatim}
+\end{column}
+
+\begin{column}{0.5\textwidth}
+\\Contents of a.html
+\begin{verbatim}
+<html>
+  <body>
+    <h1>Hello World!</h1>
+  </body>
+</html>
+\end{verbatim}
+\end{column}
+\end{columns}
+
+\pause
+\textcolor{red}{A bit too easy, isn't it? Ready to get nasty?}
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+\ftitle{Getting serious about grep}
+\begin{enumerate}
+
+\item Output of \texttt{grep h1 a.html*}
+
+\begin{verbatim}
+a.html:<h1>Hello World!</h1>
+a.html~:<h1>Hello World~</h1>
+\end{verbatim}
+
+\pause
+\item Output of \texttt{grep -n h1 a.html*}
+\begin{verbatim}
+a.html:3:<h1>Hello World!</h1>
+a.html~:3:<h1>Hello World~</h1>
+\end{verbatim}
+
+\pause
+\item Output of \texttt{grep -n -i 'heLlO wORlD' a.html*}
+\begin{verbatim}
+a.html:3:<h1>Hello World!</h1>
+a.html~:3:<h1>Hello World~</h1>
+\end{verbatim}
+
+\pause
+\item Find out more in \texttt{'man grep'} !
+\pause
+\item grep on Linux is more fun! :p
+\end{enumerate}
+\end{frame}
+
 
 
 \subsection{Some useful applications on UNIX}
@@ -688,3 +789,71 @@ To log out of \texttt{sunfire}, use the \texttt{logout} command, \cmd{logout}
 \end{frame}
 
 \end{document}
+
+
+% Activity to share files {{{
+The following activity, shows you how to share a file on your personal website.  
+
+\begin{frame}[allowframebreaks=0.6]{Activity: \texttt{sunfire} as a web host}
+\begin{enumerate}
+\item Find out your home directory using the following command
+\cmd{pwd}
+\item Create a directory under your home directory named
+\texttt{public\_html}. \cmd{mkdir public\_html}
+\item Move \texttt{hello.txt} into the \texttt{public\_html} directory. \cmd{mv hello.txt public\_html}
+\item Change the permissions on \texttt{public\_html} so that it is readable by
+the web server. \cmd{chmod a+rx public\_html}
+\item Change your current directory to \texttt{public\_html}. \cmd{cd public\_html}
+\item Change the permission on \texttt{hello.txt} so that it is readable by the
+web server.  \cmd{chmod a+r hello.txt}
+\item Ask the person next to you to download hello.txt from your personal
+website at \url{http://www.comp.nus.edu.sg/~unix_username/hello.txt}
+\end{enumerate}
+\end{frame}
+%}}}
+
+% CLI vs GUI {{{
+% CLI
+% + power of piping and redirection, greater control
+% + portable (available in many systems)
+% + least overhead
+% + easy remote access
+% + faster to get things done
+% + can be easily automated/scripted
+% - higher learning curve
+% - not easy to multi-task
+
+% GUI
+% + display of dynamically modifiable information
+% + aesthetics
+% + media
+% + true multitasking
+% + more intuitive, easier to learn
+
+%* You can do things very quickly on command line.
+%* GUI prevents you from understanding and learning the functionality happening behind the scenes.
+%* Repetitive things can be automated easily using command line.
+
+% GUI: WYSIWYG = WYSIAYG
+% CLI: suited to performing ad hoc operations, to quickly combine a few commands
+% to perform a query or some tasks
+
+\begin{frame}
+\ftitle{CLI vs GUI}
+\begin{block}{Graphical User Interface}
+What they tell you, WYSIWYG (What you see is what you get). \pause
+The truth is, WYSIAYG (What you see is all you get).
+\end{block}
+
+\pause
+
+\begin{block}{Command Line Interface}
+\begin{itemize}
+\item Suited to performing ad hoc operations by combining a few commands.  
+\item Easy to automate repetitive tasks.
+\item Default interface when accessing remote servers.  
+\end{itemize}
+\end{block}
+\end{frame}
+
+%}}}

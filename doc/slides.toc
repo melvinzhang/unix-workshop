@@ -5,8 +5,8 @@
 \beamer@sectionintoc {2}{UNIX in SoC}{12}{0}{2}
 \beamer@subsectionintoc {2}{1}{Checking your SoC email account}{16}{0}{2}
 \beamer@subsectionintoc {2}{2}{SoC's \texttt {sunfire} server}{18}{0}{2}
-\beamer@subsectionintoc {2}{3}{Creating text files}{24}{0}{2}
-\beamer@subsectionintoc {2}{4}{Organising your home directory}{28}{0}{2}
-\beamer@subsectionintoc {2}{5}{Some useful applications on UNIX}{33}{0}{2}
-\beamer@sectionintoc {3}{Summary}{43}{0}{3}
-\beamer@sectionintoc {4}{Resources}{46}{0}{4}
+\beamer@subsectionintoc {2}{3}{Creating text files}{23}{0}{2}
+\beamer@subsectionintoc {2}{4}{Organising your home directory}{27}{0}{2}
+\beamer@subsectionintoc {2}{5}{Some useful applications on UNIX}{40}{0}{2}
+\beamer@sectionintoc {3}{Summary}{50}{0}{3}
+\beamer@sectionintoc {4}{Resources}{53}{0}{4}
