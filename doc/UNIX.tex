@@ -42,6 +42,14 @@ Melvin~Zhang
 }
 
 \begin{frame}
+\begin{center}
+\includegraphics[width=\textwidth]{jurassic_park}
+
+\url{http://www.youtube.com/watch?v=dFUlAQZB9Ng}
+\end{center}
+\end{frame}
+
+\begin{frame}
 \ftitle{Jurassic Park (1993)}
 \begin{quote}
 ``It's a UNIX system! I know this.''
@@ -50,6 +58,7 @@ Melvin~Zhang
 -- Alexis ``Lex'' Murphy, Jurassic Park (1993)
 \end{flushright}
 \end{frame}
+
 
 % UNIX in the industry
 % web sites powered by UNIX
@@ -70,11 +79,13 @@ Melvin~Zhang
 
 \begin{frame}{You will be programming in UNIX}
 
-%QQQ image of someone programming
+\begin{center}
+\includegraphics[width=0.8\textwidth]{programming}
+\end{center}
 
 \begin{itemize}
-\item CS1010 - developing C programs in UNIX.  
-\item CS1020 - developing Java programs in UNIX
+\item CS1010 labs - developing C programs in UNIX.  
+\item CS1020 labs - developing Java programs in UNIX
 \end{itemize}
 \end{frame}
 
@@ -113,9 +124,9 @@ In the following activity, you will create your UNIX account.
 % ACTIVITY
 \begin{frame}{Activity: Creating your UNIX account}
 \mode<presentation>{
-\begin{LARGE}
+\begin{large}
 \url{https://mysoc.nus.edu.sg/~newacct}
-\end{LARGE}
+\end{large}
 
 Login using your NUSNET user name and password.  
 }
@@ -150,9 +161,9 @@ All of these operating systems provide a UNIX-like environment to the user.
 SoC's \sunfire\ server runs on the Solaris operating system developed by Sun
 Microsystem.  
 
-UNIX is more than just a family operating systems. It also a way of working that
-emphasizes creating small sharp tools that work well together. This is embodied
-in the UNIX philosophy.   
+UNIX is more than just a family operating systems. It also an approach towards
+software that emphasizes creating small sharp tools that work well together.
+This is embodied in the UNIX philosophy.   
 
 \begin{frame}{The UNIX Philosophy}
 \begin{quote}
@@ -164,7 +175,7 @@ Write programs to handle text streams, because that is a universal interface.
 \end{quote}
 \begin{flushright}
 \mode<presentation>{\includegraphics[height=0.3\textheight]{mcilroy}\\}
--- Douglas McIlroy
+-- Douglas McIlroy\\(inventor of UNIX pipes)
 \end{flushright}
 \end{frame}
 %}}}
@@ -273,11 +284,23 @@ dramatically improve your productivity.
 In the following activity, we will use nano, \url{http://www.nano-editor.org/}, to create a simple text file. 
 
 % ACTIVITY
-\begin{frame}{Activity: Text editing with nano}
+\begin{frame}[fragile]{Activity: Text editing with nano}
 \begin{enumerate}
 \item From the Secure Shell Client window start Vim and create a new file using
-the command \cmd{nano hello.txt}
+the command \cmd{nano lorem\_ipsum.txt}
 \item Type the following paragraph as carefully as possible.  
+\item 
+\begin{verbatim}
+Lorem ipsum dolor sit amet,
+consectetur adipisicing elit,
+sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis
+nostrud exercitation ullamco
+laboris nisi ut aliquip ex ea
+commodo consequat.
+\end{verbatim}
+
 \item Save the file and exit nano by pressing \cmd{Ctrl-x}
 \end{enumerate}
 \end{frame}
