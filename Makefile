@@ -1,4 +1,5 @@
-all: notes slides
+all: doc/slides.pdf
+	#doc/notes.pdf doc/slides.pdf doc/handout.pdf
 
 clean:
 	cd doc; latexmk -C
@@ -12,18 +13,13 @@ upload:
 	scp act/sms/SMSwords.txt sunfire.comp.nus.edu.sg:public_html/UWS
 	scp video/intro.mpg sunfire.comp.nus.edu.sg:public_html/UWS
 
-notes: doc/notes.pdf
-
-slides: doc/slides.pdf
-
-intro: video/intro.mpg
-
-count: act/sms/count.txt
-
-doc/notes.pdf: doc/UNIX.tex
+doc/notes.pdf: doc/UNIX.tex doc/notes.tex
 	cd doc; latexmk -pdf notes.tex
 
-doc/slides.pdf: doc/UNIX.tex
+doc/handout.pdf: doc/UNIX.tex doc/handout.tex
+	cd doc; latexmk -pdf handout.tex
+
+doc/slides.pdf: doc/UNIX.tex doc/slides.tex
 	cd doc; latexmk -pdf slides.tex
 
 video/intro.mpg: video/unix.mp4
