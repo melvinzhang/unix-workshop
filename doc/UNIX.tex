@@ -267,28 +267,7 @@ User Name: your UNIX user name
 \end{frame}
 
 Once you have logged in, you will see a command line interface (see Figure
-\ref{fig:cli}). In this interface, we interact with the system by typing in a
-single line of command, followed by the \lit{Enter} key.
-
-A command consists of two parts: the name of the program you wish to execute,
-followed by a list of arguments or input to that program.  
-
-\begin{frame}[fragile]
-\ftitle{Parts of a command}
-\begin{Large}
-\begin{verbatim}
-$ program_name argument1 argument2 ...
-\end{verbatim}
-\end{Large}
-\end{frame}
-
-Such an interface might seem rather primitive compared to the rich graphical
-user interfaces (GUI) we are used to.  However, there are a number of advantages
-to using the CLI. It is a reasonable interface for programs that do not need to
-interact with the user and it makes it easy to invoke any program even if there
-are thousands of programs installed. Once you are comfortable with this
-interface, it can be much faster than using the GUI.  
-
+\ref{fig:cli}). 
 
 Our next activity involves working with files and directories. On UNIX, files
 are arranged in a hierarchy (see Figure \ref{fig:dir}) of directories.  The top
@@ -304,6 +283,29 @@ of the hierarchy is traditionally called root (written as a slash /).
 \label{fig:dir}
 \end{figure}
 \end{frame}
+
+In this interface, we interact with the system by typing in a single line of
+command, followed by the \lit{Enter} key.  A command consists of two parts: the
+name of the program you wish to execute, followed by a list of arguments or
+input to that program.  
+
+\begin{frame}[fragile]
+\ftitle{Parts of a command}
+\begin{Large}
+\begin{verbatim}
+$ program argument1 argument2 ...
+\end{verbatim}
+\end{Large}
+\end{frame}
+
+Such an interface might seem rather primitive compared to the rich graphical
+user interfaces (GUI) we are used to.  However, there are a number of advantages
+to using the CLI. It is a reasonable interface for programs that do not need to
+interact with the user and it makes it easy to invoke any program even if there
+are thousands of programs installed. Once you are comfortable with this
+interface, it can be much faster than using the GUI.  
+
+
 
 In the following activity, we will use the command line to create a directory to
 store files related to this workshop.  There is a concept of a \emph{working
@@ -398,7 +400,7 @@ name used by gcc is \lit{a.out}
 \item Type in a pair of integers followed by the \lit{Enter} key, for example
 \cmd{58 24}
 \item Repeat step 4 as many times as you like.  
-\item To end the program, press \lit{Ctrl-d}
+\item To force the program to end, press \lit{Ctrl-c}
 \end{enumerate}
 
 
@@ -423,7 +425,7 @@ name used by gcc is \lit{a.out}
 \begin{frame}[fragile]{Testing on UNIX}
 \begin{Large}
 \begin{verbatim}
-$ program_name < input_file > output_file
+$ program < input > output
 \end{verbatim}
 \end{Large}
 \end{frame}
@@ -443,11 +445,16 @@ an input file using nano. \cmd{nano input}
 \end{enumerate}
 \end{frame}
 
-\begin{frame}{Activity: Creating the correct output}
+\begin{frame}[fragile]{Activity: Creating the correct output}
 \begin{enumerate}
 \item Create an file for the correct output
 \cmd{nano answer}
 \item Type in the correct GCD for each pair of integers in the input
+\begin{verbatim}
+GCD(3,10)=1
+GCD(15,25)=5
+GCD(200,420)=20
+\end{verbatim}
 \item Save and exit nano.  
 \item Run the GCD program on the test case. \cmd{./a.out < input > output}
 \end{enumerate}
