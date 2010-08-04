@@ -16,7 +16,7 @@
 
 \newcommand{\ftitle}[1]{\frametitle<presentation>{#1}}
 \newcommand{\cmd}[1]{\begin{quote}{\tt #1}\end{quote}}
-\newcommand{\sunfire}{\texttt{sunfire}}
+\newcommand{\lit}[1]{\texttt{#1}}
 
 \title{UNIX Workshop 2010\\\url{http://uws.assembla.me}}
 \author{
@@ -41,7 +41,7 @@ Melvin~Zhang
   \end{frame}
 }
 
-\begin{frame}
+\begin{frame}<presentation>
 \begin{center}
 \includegraphics[width=\textwidth]{jurassic_park}
 
@@ -59,26 +59,53 @@ Melvin~Zhang
 \end{flushright}
 \end{frame}
 
+\section{Why UNIX?} %{{{
+You may be running Windows on your desktop/laptop, but the next time you visit
+Google or Facebook, the webpage you see is being served from a computer running
+UNIX. According to \url{w3techs.com}, in August 2010, at least 67\% of all web
+servers are running on UNIX.
 
-% UNIX in the industry
-% web sites powered by UNIX
-\begin{frame}{What do these sites have in common?}
-\includegraphics[width=\textwidth]{site_logos} 
+UNIX is the name of the operating system developed by a group of AT\&T
+researchers at Bell Labs in 1969.  Most modern operating systems, such as Linux,
+Solaris, Mac OS X, and BSD (see Figure \ref{fig:modern}), descended from UNIX.
+All of these operating systems provide a UNIX-like environment to the user. In
+the rest of these notes, the term UNIX will refer to these modern day
+descendants of the original AT\&T UNIX.   
 
-\pause
-
-67\% of all web servers are running on UNIX\footnote{\url{http://w3techs.com}, August 2010}
+\begin{frame}
+\ftitle{Modern UNIX}
+\begin{figure}
+\begin{center}
+\includegraphics[width=250pt]{unix_logos}
+\caption{Modern UNIX-like operating systems (Linux, BSD, Solaris)}
+\label{fig:modern}
+\end{center}
+\end{figure}
 \end{frame}
 
-% UNIX in SoC (brief)
-\begin{frame}{C was invented to write UNIX}
+\begin{frame}<presentation>{What do these sites have in common?}
+\includegraphics[width=\textwidth]{site_logos} 
+\pause
+
+\begin{Large}
+67\% of all web servers are running on UNIX\footnote{\url{http://w3techs.com}, August 2010}
+\end{Large}
+\end{frame}
+
+\begin{frame}<presentation>{C was invented to write UNIX}
 \begin{center}
 \includegraphics[width=0.6\textwidth]{c}
 \end{center}
 \end{frame}
 
-\begin{frame}{You will be programming in UNIX}
+The story of UNIX is also tied in with the creation of the C programming
+language.  Dennis Ritchie invented C in order to rewrite UNIX. Coincidentally,
+starting from the 2010 intake, the School of Computing changed the programming
+language used in its programming methodology module from Java to C. For those of
+you doing Scheme, you will learn C when you start on your Operating System
+module (CS2106).   
 
+\begin{frame}<presentation>{You will be programming in UNIX}
 \begin{center}
 \includegraphics[width=0.8\textwidth]{programming}
 \end{center}
@@ -89,16 +116,36 @@ Melvin~Zhang
 \end{itemize}
 \end{frame}
 
+Finally, in addition to learning about programming methodology in the
+introductory modules, you will be required to develop your C/Java programs in
+the UNIX environment.
+
+The basic workflow for writing programs is the edit-compile-run-test cycle (see
+Figure \ref{fig:flow}).  For interpreted languages, such as Scheme, there is no
+compile step.  In this workshop, we will be focusing on the parts of UNIX
+related to the edit-compile-run-test cycle.  
+
+\begin{frame}
+\begin{figure}
+\begin{center}
+\includegraphics[page=1,width=250pt]{flow}
+\caption{Workflow for writing programs}
+\label{fig:flow}
+\end{center}
+\end{figure}
+\end{frame}
+%}}}
+
 \section{Getting started} %{{{ 
 SoC operates a number of UNIX servers where students can login and interactively
-develop programs in the UNIX environment.  We will be accessing SoC's \sunfire\
+develop programs in the UNIX environment.  We will be accessing SoC's \lit{sunfire}
 server from the PCs in the programming lab.  Use your NUSNET account to login to
 the PC in the programming lab.  
 
 % ACTIVITY
 \begin{frame}{Activity: Login to NUSNET}
 \begin{enumerate}
-\item Press \texttt{Ctrl-Alt-Delete}.
+\item Press \lit{Ctrl-Alt-Delete}.
 \mode<presentation>{
 \begin{figure}
 \begin{center}
@@ -114,19 +161,19 @@ the PC in the programming lab.
 \end{center}
 \end{figure}
 }
-\item Click on the \texttt{Ok} button.  
+\item Click on the \lit{Ok} button.  
 \end{enumerate}
 \end{frame}
 
-Before you can login to \sunfire\, you will need to create your UNIX account.
+Before you can login to \lit{sunfire}, you will need to create your UNIX account.
 In the following activity, you will create your UNIX account.  
 
 % ACTIVITY
 \begin{frame}{Activity: Creating your UNIX account}
 \mode<presentation>{
-\begin{large}
+\begin{Large}
 \url{https://mysoc.nus.edu.sg/~newacct}
-\end{large}
+\end{Large}
 
 Login using your NUSNET user name and password.  
 }
@@ -141,26 +188,293 @@ user name and password.
 }
 \end{frame}
 
+
+SoC's \lit{sunfire} server runs on the Solaris operating system developed by Sun
+Microsystem.  
+
 %}}}
 
-\section{What is UNIX?} %{{{
-UNIX is the name of the operating system developed by a group of AT\&T
-researchers at Bell Labs in 1969.  Most modern operating systems, such as Linux,
-Solaris, Mac OS X, and BSD (see Figure \ref{fig:modern}), descended from UNIX.
-All of these operating systems provide a UNIX-like environment to the user. 
+\section{Command line interface} %{{{
 
 \begin{frame}
-\ftitle{Modern UNIX}
+\ftitle{\lit{sunfire} server in the old Machine Room}
 \begin{figure}
-\begin{center}\includegraphics[width=0.7\linewidth]{unix_logos}\end{center}
-\caption{Modern UNIX-like operating systems (Linux, BSD, Solaris)}
-\label{fig:modern}
+\begin{center}
+\includegraphics[scale=0.5]{machine_room}
+\caption{\lit{sunfire} server located in the Machine Room with our Central
+Facilities staff. Clockwise from top-left: Tan Chee Sin, Tan Kwang Pon, Budiman
+Tsjin and Lai Zit Seng (Systems programmer, ITU).}
+\label{fig:sunfire}
+\end{center}
 \end{figure}
 \end{frame}
 
-SoC's \sunfire\ server runs on the Solaris operating system developed by Sun
-Microsystem.  
+In the next activity, we will connect to the \lit{sunfire} server (see Figure
+\ref{fig:sunfire}) and access the UNIX system via the Secure Shell protocol
+(ssh).
 
+\begin{frame}{Activity: Connecting to \lit{sunfire}}
+\begin{enumerate}
+\item From the desktop, launch the \lit{SSH Secure Shell Client} application. 
+\item Click on \lit{Quick Connect}\\ 
+Host Name: \lit{sunfire.comp.nus.edu.sg}\\ 
+User Name: your UNIX user name
+\mode<presentation>{
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.25]{ssh_sunfire}
+\end{center}
+\end{figure}
+}
+\item Click on \lit{Connect}.
+\item Click on ``Yes'' at the Host identification dialog.  
+\item Enter your UNIX password in the password dialog.  
+\end{enumerate}
+\end{frame}
+
+
+% Linux/Mac OS X already comes with a UNIX-like environemnt,
+% recommend windows users use Cygwin  
+
+% Act: create a folder to put files for UWS
+
+% Basic concepts:
+% Launching program by typing name follow by parameters, programs as functions, f(x) ?
+% Silence is golden: there is usually no output when a program runs successfully
+
+% Activity:
+% home directory
+% ls
+% pwd
+% mkdir UNIXWorkshopFiles
+% cd UN (tab completion)
+% pwd
+% cd ..
+% cd UN (tab completion)
+
+
+% Intro to Linux Comand Line, http://www.youtube.com/watch?v=6kxK8Fqcs5o
+
+\begin{frame}
+\ftitle{Command line interface}
+\begin{figure}
+\begin{center}
+\includegraphics[width=250pt]{ssh_command_line}
+\caption{Command line interface on \lit{sunfire}}
+\label{fig:cli}
+\end{center}
+\end{figure}
+\end{frame}
+
+Once you have logged in, you will see a command line interface (see Figure
+\ref{fig:cli}). In this interface, we interact with the system by typing in a
+single line of command, followed by the \lit{Enter} key.
+
+A command consists of two parts: the name of the program you wish to execute,
+followed by a list of arguments or input to that program.  
+
+\begin{frame}[fragile]
+\ftitle{Parts of a command}
+\begin{Large}
+\begin{verbatim}
+$ program_name argument1 argument2 ...
+\end{verbatim}
+\end{Large}
+\end{frame}
+
+Such an interface might seem rather primitive compared to the rich graphical
+user interfaces (GUI) we are used to.  However, there are a number of advantages
+to using the CLI. It is a reasonable interface for programs that do not need to
+interact with the user and it makes it easy to invoke any program even if there
+are thousands of programs installed. Once you are comfortable with this
+interface, it can be much faster than using the GUI.  
+
+
+Our next activity involves working with files and directories. On UNIX, files
+are arranged in a hierarchy (see Figure \ref{fig:dir}) of directories.  The top
+of the hierarchy is traditionally called root (written as a slash /).
+
+\begin{frame}
+\ftitle{UNIX Directory Tree}
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.4]{file_home}
+\end{center}
+\caption{A subset of the UNIX directory tree showing home directories}
+\label{fig:dir}
+\end{figure}
+\end{frame}
+
+In the following activity, we will use the command line to create a directory to
+store files related to this workshop.  There is a concept of a \emph{working
+directory}. Commands that operate on files or directories assumes that you are
+modifying your working directory.  
+
+% ACTIVITY
+\begin{frame}[fragile]{Activity: Working with files and directories}
+\begin{enumerate}
+\item After login, you are place in your home directory, e.g. \lit{/home/m/melvin}
+\item You can check your working directory using the \lit{pwd} command \cmd{pwd}
+\item The \lit{ls} command shows you the files in your working directory \cmd{ls}
+\item Now create a new directory called \lit{UNIXWorkshopFiles} \cmd{mkdir UNIXWorkshopFiles}
+\item Switch to the new folder using the \lit{cd} command
+\cmd{cd UNIXWorkshopFiles}
+\item Use the \lit{pwd} again command to check your working directory \cmd{pwd}
+\end{enumerate}
+\end{frame}
+
+%}}}
+
+\section{Text editing} %{{{
+
+\begin{frame}<presentation>
+\includegraphics[page=2,width=\textwidth]{flow}
+\end{frame}
+
+There are many types of files in UNIX, the include:
+\begin{itemize}
+\item a document (report, essay etc.)
+\item the text of a program written in some high-level programming language
+\item instructions comprehensible directly to the machine and incomprehensible 
+to a casual user, for example, a collection of binary digits (an executable or 
+binary file)
+\item a directory, containing information about its contents, which may be a 
+mixture of other directories (subdirectories) and ordinary files.
+\end{itemize}
+
+By far the most common are text files, which are used extensively on a UNIX
+system for storing system data, program configuration files, scripts and source
+code. They are preferable to binary files because they can be easily
+read/modified.  The most important program for working with text files is a
+\emph{text editor}, a program to interactively create/edit text files.  Examples
+of editors on UNIX are nano, Vim, and Emacs.
+
+\begin{frame}
+\ftitle{Text files are ubiquitous on UNIX}
+\mode<presentation>{
+Program source code are stored as text files. A good text editor can
+dramatically improve your productivity.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.75\textwidth]{nano}
+\end{center}
+\caption{Screenshot of nano}
+\end{figure}
+}
+\end{frame}
+
+In the following activity, we will use nano, \url{http://www.nano-editor.org/},
+to edit a simple C program. Nano is a basic text editor that is easy to learn,
+if you are interested in a more sophisticated text editor, you should try
+learning Vim or Emacs.  
+
+% ACTIVITY
+\begin{frame}[fragile]{Activity: Text editing with nano}
+\begin{enumerate}
+\item Download the sample \lit{GCD.c} program from the UWS website using wget
+\cmd{wget http://uws.assembla.me/GCD.c}
+\item Edit the file using name \lit{nano}
+\cmd{nano GCD.c}
+\item Type in your name and matric number as indicated in the file.  
+\item Save the file and exit nano by pressing \cmd{Ctrl-x}
+\item Check the contents of the file using the \lit{cat} command
+\cmd{cat GCD.c}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}<presentation>
+\includegraphics[page=3,width=\textwidth]{flow}
+\end{frame}
+
+\begin{frame}{Activity: Compiling and running}
+\begin{enumerate}
+\item C programs are compiled using the \lit{gcc} compiler.
+\cmd{gcc GCD.c}
+\item To run a program, you must add \lit{./} in front of its name. The default
+name used by gcc is \lit{a.out}
+\item Run the GCD program
+\cmd{./a.out}
+\item Type in a pair of integers followed by the \lit{Enter} key, for example
+\cmd{58 24}
+\item Repeat step 4 as many times as you like.  
+\item To end the program, press \lit{Ctrl-d}
+\end{enumerate}
+
+
+\end{frame}
+
+%}}}
+
+\section{Working with text files} %{{{
+
+\begin{frame}<presentation>
+\begin{center}
+\includegraphics[page=4,width=\textwidth]{flow}
+\end{center}
+\end{frame}
+
+\begin{frame}{Testing}
+\begin{center}
+\includegraphics[width=250pt]{bbtesting}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Testing on UNIX}
+\begin{Large}
+\begin{verbatim}
+$ program_name < input_file > output_file
+\end{verbatim}
+\end{Large}
+\end{frame}
+
+% ACTIVITY
+\begin{frame}[fragile]{Activity: Creating the input}
+\begin{enumerate}
+\item Instead of typing the input by hand as in the previous activity, we create
+an input file using nano. \cmd{nano input}
+\item Type in pairs of integers, one pair per line, for example
+\begin{verbatim}
+3 10
+15 25
+200 420
+\end{verbatim}
+\item Save and exit nano. 
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Activity: Creating the correct output}
+\begin{enumerate}
+\item Create an file for the correct output
+\cmd{nano answer}
+\item Type in the correct GCD for each pair of integers in the input
+\item Save and exit nano.  
+\item Run the GCD program on the test case. \cmd{./a.out < input > output}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{When things go wrong}
+\begin{center}
+\includegraphics[width=250pt]{bug}
+\end{center}
+\end{frame}
+
+\begin{frame}{Activity: Find the bugs!}
+
+\begin{enumerate}
+\item Open \lit{output} in nano and verify if it matches the correct answer.
+\cmd{nano output}
+\item If they differ, you've found the bug!, else try again with different
+\lit{input/answer} files
+\item Hint: manually checking whether two files are identical is boring, try
+using the \lit{diff} command
+\cmd{diff answer output}
+\end{enumerate}
+\end{frame}
+
+%}}}
+
+\section{Combing multiple tools} %{{{
 UNIX is more than just a family operating systems. It also an approach towards
 software that emphasizes creating small sharp tools that work well together.
 This is embodied in the UNIX philosophy.   
@@ -178,277 +492,7 @@ Write programs to handle text streams, because that is a universal interface.
 -- Douglas McIlroy\\(inventor of UNIX pipes)
 \end{flushright}
 \end{frame}
-%}}}
 
-\section{Command line interface} %{{{
-
-\begin{frame}
-\ftitle{\sunfire\ server in the old Machine Room}
-\begin{figure}
-\begin{center}
-\includegraphics[scale=0.5]{machine_room}
-\caption{\sunfire\ server located in the Machine Room with our Networks
-staff. Clockwise from top-left: Tan Chee Sin, Tan Kwang Pon, Budiman Tsjin
-(has since left SOC) and Lai Zit Seng.}
-\label{fig:sunfire}
-\end{center}
-\end{figure}
-\end{frame}
-
-In the next activity, we will connect to the \sunfire\ server (see Figure
-\ref{fig:sunfire}) and access the UNIX system via the Secure Shell protocol
-(ssh).
-
-\begin{frame}{Activity: Connecting to \sunfire}
-\begin{enumerate}
-\item From the desktop, launch the \texttt{SSH Secure Shell Client} application. 
-\item Click on \texttt{Quick Connect}\\ 
-Host Name: \texttt{sunfire.comp.nus.edu.sg}\\ 
-User Name: your UNIX user name
-\mode<presentation>{
-\begin{figure}
-\begin{center}
-\includegraphics[scale=0.25]{ssh_sunfire}
-\end{center}
-\end{figure}
-}
-\item Click on \texttt{Connect}.
-\item Click on ``Yes'' at the next dialog.  
-\item Enter your UNIX password in the password dialog.  
-\end{enumerate}
-\end{frame}
-
-Once you have logged in, you will see a command line interface.   
-
-% running programs
-% exploring the directory, create a UWS dir
-% mkdir UWS, ls, cd UWS
-
-\begin{frame}
-\ftitle{Command line interface}
-\begin{figure}
-\begin{center}
-\includegraphics[width=0.8\textwidth]{ssh_command_line}
-\end{center}
-\end{figure}
-
-%Launching program by typing name follow by parameters.  
-%Programs as functions, f(x)
-\end{frame}
-
-%\begin{frame}{Command line interface}
-%\begin{itemize}
-%\item Silence is golden: there is usually no output when a program runs successfully
-%\item Easy to automate repetitive tasks
-%\item Default interface when accessing remote servers %not that important..
-%\end{itemize}
-%\end{frame}
-
-%}}}
-
-\section{Text editing} %{{{
-
-Types of files you will encounter on UNIX include the following:
-\begin{itemize}
-\item a document (report, essay etc.)
-\item the text of a program written in some high-level programming language
-\item instructions comprehensible directly to the machine and incomprehensible 
-to a casual user, for example, a collection of binary digits (an executable or 
-binary file)
-\item a directory, containing information about its contents, which may be a 
-mixture of other directories (subdirectories) and ordinary files.
-\end{itemize}
-
-Text files are used extensively on a UNIX system for storing system data,
-program configuration files, scripts and source code. They are preferable to
-binary files because they can be easily read/modified.  The most important
-program is a text editor, a program to interactively create/edit text files.
-Examples of editors on UNIX are Vim, Emacs, nano, and pico. 
-
-\begin{frame}
-\ftitle{Text files are ubiquitous on UNIX}
-\mode<presentation>{
-Program source code are stored as text files. A good text editor can
-dramatically improve your productivity.
-
-\begin{figure}
-\begin{center}
-\includegraphics[width=0.75\textwidth]{nano}
-\end{center}
-\caption{Screenshot of nano}
-\end{figure}
-}
-\end{frame}
-
-
-In the following activity, we will use nano, \url{http://www.nano-editor.org/}, to create a simple text file. 
-
-% ACTIVITY
-\begin{frame}[fragile]{Activity: Text editing with nano}
-\begin{enumerate}
-\item From the Secure Shell Client window start Vim and create a new file using
-the command \cmd{nano lorem\_ipsum.txt}
-\item Type the following paragraph as carefully as possible.  
-\item 
-\begin{verbatim}
-Lorem ipsum dolor sit amet,
-consectetur adipisicing elit,
-sed do eiusmod tempor incididunt
-ut labore et dolore magna aliqua.
-Ut enim ad minim veniam, quis
-nostrud exercitation ullamco
-laboris nisi ut aliquip ex ea
-commodo consequat.
-\end{verbatim}
-
-\item Save the file and exit nano by pressing \cmd{Ctrl-x}
-\end{enumerate}
-\end{frame}
-%}}}
-
-\section{Working with text files} %{{{
-
-% ACTIVITY
-\begin{frame}
-\frametitle{Activity: playing with \texttt{diff} and \texttt{grep} I}
-\begin{enumerate}
-\item What is \texttt{diff}? -- compare differences between files
-\item Text editing usually leaves a lot of backup files ending with \texttt{\~}.\\  
-One day you want to figure out the differences between a file \texttt{text} and its backup \texttt{text\~}...\\  
-Open in two editors and then eye-ball?
-\cmd{diff firstFile secondFile}
-\item A quick how-to
-\end{enumerate}
-\end{frame}
-
-
-\begin{frame}[fragile]
-\frametitle{Activity: playing with \texttt{diff} and \texttt{grep} II}
-Let's see how \texttt{text} and \texttt{text\~} look like first
-
-\begin{columns}
-\begin{column}{0.5\textwidth}
-\\ Output of \texttt{cat text}
-
-\begin{verbatim}
-same text
-same text
-Hello World!
-still the same
-still the same
-\end{verbatim}
-\end{column}
-
-\begin{column}{0.5\textwidth}
-\\ Output of \texttt{cat text\~}
-\begin{verbatim}
-same text
-same text
-Hello World~
-still the same
-still the same
-\end{verbatim}
-\end{column}
-\end{columns}
-\end{frame}
-
-
-\begin{frame}[fragile]
-\frametitle{Activity: playing with \texttt{diff} and \texttt{grep} III}
-Output of \texttt{diff text text\~} :
-\begin{verbatim}
-3c3
-< Hello World!
----
-> Hello World~
-\end{verbatim}
-\end{frame}
-
-
-\begin{frame}
-\frametitle{Activity: playing with \texttt{diff} and \texttt{grep} IV}
-\begin{enumerate}
-\item What is \texttt{grep}? *-- look for a pattern in file(s)
-\cmd{grep pattern file}
-\item Sometimes it is useful to find the occurrences of some word in a (list of) file.\\ 
-Say you suspect a typo in you source code,\\ 
-open a text editor and 'Find'?
-\item But what if you made the same typo in a lot of files?\\
-'grep' makes your life easier\\
-Let's find out how to 'grep'
-\end{enumerate}
-\end{frame}
-
-
-\begin{frame}[fragile]
-\frametitle{Activity: playing with \texttt{diff} and \texttt{grep} V}
-Sample output of \texttt{grep h1 a.html}:
-
-\begin{columns}
-\begin{column}{0.5\textwidth}
-\texttt{grep h1 a.html}
-
-\begin{verbatim}
-    <h1>Hello World!</h1>
-\end{verbatim}
-\end{column}
-
-\begin{column}{0.5\textwidth}
-\\Contents of a.html
-\begin{verbatim}
-<html>
-  <body>
-    <h1>Hello World!</h1>
-  </body>
-</html>
-\end{verbatim}
-\end{column}
-\end{columns}
-
-\pause
-\textcolor{red}{A bit too easy, isn't it? Ready to get nasty?}
-\end{frame}
-
-\begin{frame}[fragile]
-\ftitle{Getting serious about grep}
-\begin{enumerate}
-
-\item Output of \texttt{grep h1 a.html*}
-
-\begin{verbatim}
-a.html:<h1>Hello World!</h1>
-a.html~:<h1>Hello World~</h1>
-\end{verbatim}
-
-\pause
-\item Output of \texttt{grep -n h1 a.html*}
-\begin{verbatim}
-a.html:3:<h1>Hello World!</h1>
-a.html~:3:<h1>Hello World~</h1>
-\end{verbatim}
-
-\pause
-\item Output of \texttt{grep -n -i 'heLlO wORlD' a.html*}
-\begin{verbatim}
-a.html:3:<h1>Hello World!</h1>
-a.html~:3:<h1>Hello World~</h1>
-\end{verbatim}
-
-\pause
-\item Find out more in \texttt{'man grep'} !
-\pause
-\item grep on Linux is more fun! :p
-\end{enumerate}
-\end{frame}
-%}}}
-
-% This is analogous to the way web services communicate
-% analogy with Internet web services, assembly line
-% ls
-% man
-% prog1 $|$ prog2
-% prog $>$ file
-\section{Combing multiple tools} %{{{
 The next activity demonstrates the UNIX philosophy, by making use
 of three simple UNIX utility programs to analyse SMS messages.  
 
@@ -503,10 +547,10 @@ The desired output is:
 % introduce man to find the option of sort and uniq to use
 
 \begin{frame}[fragile]
-\frametitle{Activity: \texttt{sort} and \texttt{uniq}}
+\frametitle{Activity: \lit{sort} and \lit{uniq}}
 Two UNIX utility programs are related to our task.  
 
-\begin{block}{\texttt{sort}}
+\begin{block}{\lit{sort}}
 \begin{tabular}{c c c}
 Input: & & Output: \\
 dog    & & bat \\
@@ -516,7 +560,7 @@ cat    & & log \\
 \end{tabular}
 \end{block}
 
-\begin{block}{\texttt{uniq}}
+\begin{block}{\lit{uniq}}
 \begin{tabular}{c c c}
 Input: & & Output: \\
 dog    & & dog \\
@@ -537,8 +581,8 @@ cat    & & \\
 \cmd{wget \url{http://uws.assembla.me/SMSwords.txt}}  
 \item Sort the file.  \cmd{sort SMSwords.txt} 
 \item Sort and remove duplicates.   \cmd{sort SMSwords.txt | uniq} 
-\item We need to use a particular option of \texttt{uniq} which counts the
-number of duplicates, read the manual page for \texttt{uniq}. Press \texttt{q}
+\item We need to use a particular option of \lit{uniq} which counts the
+number of duplicates, read the manual page for \lit{uniq}. Press \lit{q}
 to leave the manual page. \cmd{man uniq} 
 \item Sort and count words, \cmd{sort SMSwords.txt | uniq -???} 
 \item Sort by the frequency, so that more frequent words appear later, 
@@ -549,25 +593,24 @@ to leave the manual page. \cmd{man uniq}
 
 \section{Summary} %{{{ 
 
-\begin{frame}
-\ftitle{Summary}
-
-
-\end{frame}
+%\begin{frame}
+%\ftitle{Summary}
+%\end{frame}
 
 Finally, after we are done with what we need to do in the UNIX environment, we
 have to logout of the system.  
 
 % ACTIVITY
-\begin{frame}{Activity: Logging out of \texttt{sunfire}}
-To log out of \texttt{sunfire}, use the \texttt{logout} command, \cmd{logout}
+\begin{frame}{Activity: Logging out of \lit{sunfire}}
+To log out of \lit{sunfire}, use the \lit{logout} command, \cmd{logout}
 \end{frame}
 
 \begin{frame}{Useful programs/websites}
 \begin{itemize}
-\item KiTTY SSH client\\ \url{http://www.9bis.net/kitty/}
-\item Computing facilities in SoC\\ \url{http://docs.comp.nus.edu.sg/cf}
-\item mySoC (Web services)\\ \url{https://mysoc.nus.edu.sg}
+\item KiTTY, SSH client for Windows\\ \url{http://www.9bis.net/kitty/}
+\item Cygwin, UNIX-like environment for Windows\\ \url{http://www.cygwin.com/}
+\item Description of computing facilities in SoC\\ \url{http://docs.comp.nus.edu.sg/cf}
+\item mySoC, web service portal\\ \url{https://mysoc.nus.edu.sg}
 \end{itemize}
 \end{frame}
 %}}}
@@ -602,20 +645,20 @@ The materials for this workshop are adapted from the following sources:
 % Activity to share files 
 The following activity, shows you how to share a file on your personal website.  
 
-\begin{frame}[allowframebreaks=0.6]{Activity: \texttt{sunfire} as a web host}
+\begin{frame}[allowframebreaks=0.6]{Activity: \lit{sunfire} as a web host}
 \begin{enumerate}
 \item Find out your home directory using the following command
 \cmd{pwd}
 \item Create a directory under your home directory named
-\texttt{public\_html}. \cmd{mkdir public\_html}
-\item Move \texttt{hello.txt} into the \texttt{public\_html} directory. \cmd{mv hello.txt public\_html}
-\item Change the permissions on \texttt{public\_html} so that it is readable by
+\lit{public\_html}. \cmd{mkdir public\_html}
+\item Move \lit{hello.txt} into the \lit{public\_html} directory. \cmd{mv hello.txt public\_html}
+\item Change the permissions on \lit{public\_html} so that it is readable by
 the web server. \cmd{chmod a+rx public\_html}
-\item Change your current directory to \texttt{public\_html}. \cmd{cd public\_html}
-\item Change the permission on \texttt{hello.txt} so that it is readable by the
+\item Change your working directory to \lit{public\_html}. \cmd{cd public\_html}
+\item Change the permission on \lit{hello.txt} so that it is readable by the
 web server.  \cmd{chmod a+r hello.txt}
 \item Ask the person next to you to download hello.txt from your personal
-website at \url{http://www.comp.nus.edu.sg/~unix_user name/hello.txt}
+website at \url{http://www.comp.nus.edu.sg/~melvin/hello.txt}
 \end{enumerate}
 \end{frame}
 
@@ -670,9 +713,9 @@ The truth is, WYSIAYG (What you see is all you get).
 \ftitle{Privileges}
 Your new UNIX account comes with the following privileges
 \begin{itemize}
-\item Email : \texttt{unix\_user name@comp.nus.edu.sg}
-\item Website : \url{http://www.comp.nus.edu.sg/~unix_user name}
-\item Solaris zone: \url{unix_user name-z.comp.nus.edu.sg}
+\item Email : \lit{melvin@comp.nus.edu.sg}
+\item Website : \url{http://www.comp.nus.edu.sg/~melvin}
+\item Solaris zone: \url{melvin-z.comp.nus.edu.sg}
 \item Disk quota: 2Gb
 \item Print quota: 50 pages/month
 \end{itemize}
@@ -827,9 +870,9 @@ A major part of the operating system that the user interacts with are the
 utilities that helps the user to perform everyday tasks such as editing files,
 printing and reading email.     
 
-You have already used a number of such utilities such as \texttt{mkdir} (make
-directory), \texttt{mv} (move), \texttt{chmod} (change modifiers/permissions)
-and \texttt{cd} (change directory).
+You have already used a number of such utilities such as \lit{mkdir} (make
+directory), \lit{mv} (move), \lit{chmod} (change modifiers/permissions)
+and \lit{cd} (change directory).
 
 In the next activity, you will learn a number of utilities related to printing.
 There are a number of printers that are exclusive to SoC students, they are
@@ -847,22 +890,22 @@ located in COM1 level 1 and basement.
 }
 
 \begin{itemize}
-\item View the status of the print queue, use \texttt{lpq}, \cmd{lpq -P pstsc}
-\item Remove a print job after it has been sent, use \texttt{lprm}, \cmd{lprm -P pstsc 89}
-\item Check your print quota, use \texttt{pusage}, \cmd{pusage}
+\item View the status of the print queue, use \lit{lpq}, \cmd{lpq -P pstsc}
+\item Remove a print job after it has been sent, use \lit{lprm}, \cmd{lprm -P pstsc 89}
+\item Check your print quota, use \lit{pusage}, \cmd{pusage}
 \end{itemize}
 
 \end{frame}
 
 If there is additional time during the workshop, you may wish to setup a
-homepage which is accessible at \url{http://www.comp.nus.edu.sg/~unix_user name}.
+homepage which is accessible at \url{http://www.comp.nus.edu.sg/~melvin}.
 The details are provided in the following activity.  
 
 % ACTIVITY: setting up index.html
 \begin{frame}[fragile]
 \frametitle{Activity: Setting up your homepage (Optional)}
-Instead of using \texttt{hello.txt}, create a file named \texttt{index.html} and
-put it in your \texttt{public\_html} directory. Remember to change its
+Instead of using \lit{hello.txt}, create a file named \lit{index.html} and
+put it in your \lit{public\_html} directory. Remember to change its
 permissions to readable by all.  
 
 \begin{verbatim}
@@ -878,26 +921,129 @@ Hello World
 \end{frame}
 
 \section{Organising your home directory}
-Files on UNIX are arranged in a hierarchical structure, like an inverted tree
-(see Figure \ref{fig:dir}).  The top of the hierarchy is traditionally called
-root (written as a slash /)
 
-\begin{frame}
-\ftitle{UNIX Directory Tree}
-\begin{figure}
-\begin{center}
-\includegraphics[scale=0.4]{file_home}
-\end{center}
-\caption{A subset of the UNIX directory tree showing home directories}
-\label{fig:dir}
-\end{figure}
+\begin{frame}{Command line interface}
+\begin{itemize}
+\item Easy to automate repetitive tasks
+\item Default interface when accessing remote servers %not that important..
+\end{itemize}
 \end{frame}
 
-Directories allow you to organising your files on UNIX.  Certain directories
-have special meaning in UNIX. For example, the contents of the directory named
-\texttt{public\_html} in your home directory is interpreted by the web server as
-your homepage at \url{http://www.comp.nus.edu.sg/~unix_user name}
+\begin{frame}[fragile]
+\frametitle{Activity: playing with \lit{diff} and \lit{grep} II}
+Let's see how \lit{text} and \lit{text\~} look like first
 
-Sometimes you might want to share a file with your friends but it is too large
-to send through email. You can make use of the 2Gb in your UNIX account to host
-the file on your website. 
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\\ Output of \lit{cat text}
+
+\begin{verbatim}
+same text
+same text
+Hello World!
+still the same
+still the same
+\end{verbatim}
+\end{column}
+
+\begin{column}{0.5\textwidth}
+\\ Output of \lit{cat text\~}
+\begin{verbatim}
+same text
+same text
+Hello World~
+still the same
+still the same
+\end{verbatim}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Activity: playing with \lit{diff} and \lit{grep} III}
+Output of \lit{diff text text\~} :
+\begin{verbatim}
+3c3
+< Hello World!
+---
+> Hello World~
+\end{verbatim}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Activity: playing with \lit{diff} and \lit{grep} IV}
+\begin{enumerate}
+\item What is \lit{grep}? *-- look for a pattern in file(s)
+\cmd{grep pattern file}
+\item Sometimes it is useful to find the occurrences of some word in a (list of) file.\\ 
+Say you suspect a typo in you source code,\\ 
+open a text editor and 'Find'?
+\item But what if you made the same typo in a lot of files?\\
+'grep' makes your life easier\\
+Let's find out how to 'grep'
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Activity: playing with \lit{diff} and \lit{grep} V}
+Sample output of \lit{grep h1 a.html}:
+
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\lit{grep h1 a.html}
+
+\begin{verbatim}
+    <h1>Hello World!</h1>
+\end{verbatim}
+\end{column}
+
+\begin{column}{0.5\textwidth}
+\\Contents of a.html
+\begin{verbatim}
+<html>
+  <body>
+    <h1>Hello World!</h1>
+  </body>
+</html>
+\end{verbatim}
+\end{column}
+\end{columns}
+
+\pause
+\textcolor{red}{A bit too easy, isn't it? Ready to get nasty?}
+\end{frame}
+
+\begin{frame}[fragile]
+\ftitle{Getting serious about grep}
+\begin{enumerate}
+
+\item Output of \lit{grep h1 a.html*}
+
+\begin{verbatim}
+a.html:<h1>Hello World!</h1>
+a.html~:<h1>Hello World~</h1>
+\end{verbatim}
+
+\pause
+\item Output of \lit{grep -n h1 a.html*}
+\begin{verbatim}
+a.html:3:<h1>Hello World!</h1>
+a.html~:3:<h1>Hello World~</h1>
+\end{verbatim}
+
+\pause
+\item Output of \lit{grep -n -i 'heLlO wORlD' a.html*}
+\begin{verbatim}
+a.html:3:<h1>Hello World!</h1>
+a.html~:3:<h1>Hello World~</h1>
+\end{verbatim}
+
+\pause
+\item Find out more in \lit{'man grep'} !
+\pause
+\item grep on Linux is more fun! :p
+\end{enumerate}
+\end{frame}
