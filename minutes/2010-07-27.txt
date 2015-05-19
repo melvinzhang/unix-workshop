@@ -1,0 +1,58 @@
+Creating UNIX account before UWS
+From experience, the creation of UNIX account is one of the most time
+consuming parts of the workshop, to save time the freshmen should do this
+BEFORE coming to UWS.
+
+Action by Ting Ting
+  a) to email the URL to freshies to tell them to create their UNIX account before Unix Workshop or they can wait for their GLs to help them. URL is https://mysoc.nus.edu.sg/~newacct/
+  b) to ask GLs to help freshies to create their unix account during CORS bidding
+
+How UNIX will be used in the coming sem
+We decided that the main theme of the workshop is to cover some basic UNIX
+skills to prepare freshmen to use UNIX in their modules. To do this we first
+need to find out what the freshman will be using UNIX for in the introductory
+modules. 
+
+The assignment of modules to check is as follows (there are some small changes
+due to clashes in the original assignment):
+  Melvin: CS1010
+  Khoa: CS1020
+  An Hoa: CS2020
+  Perry: CG1101
+  Saiaswin: CG1103
+
+You can get info about the course from http://www.comp.nus.edu.sg/undergraduates/useful_course_schedule.html
+
+Please find out how UNIX will be used this coming sem. Specifically, we want
+to find out what students will use UNIX for (aka use cases) in the
+respective module, i.e. to write/edit programs, to compile and test programs,
+to do their labs/PE, etc
+
+Main activites during UWS
+Tentatively, we have decided to focus on the following two activities:
+  a) text editing with nano (introduction to basic text editing on UNIX)
+  b) using diff/grep (introduction to tools like diff/grep which makes it easier to check the output of lab programs)
+We have also decided to replace some of the materials in the current version of the notes.
+
+Action by An Hoa
+a) replace text editing with vim to text editing with nano
+b) to create slides and notes by editing UNIX.tex and posting the updated file to the workspace by this Friday
+c) UNIX.tex is at http://svn2.assembla.com/svn/unix_workshop/trunk/doc/UNIX.tex
+
+Action by Jialong
+a) replace the "sunfire as a webhost" activity with an introduction
+   to diff/grep, with the intention that these tools can help to simplify the
+   checking of program output against expected output (useful for labs)
+b) to create slides and notes by editing UNIX.tex and posting the updated file to the workspace by this Friday
+c) UNIX.tex is at http://svn2.assembla.com/svn/unix_workshop/trunk/doc/UNIX.tex
+
+Action by Khoa
+a) replace "GUI vs CLI" set of slides and an introduction to CLI, covering
+   concepts like programs are executing by typing their name instead of clicking
+   their icon, concept of command line arguments, silence is golden principle of
+   UNIX (no output means everything worked correctly, no need to be concerned)
+b) to create slides/notes in powerpoint and create a zip with powerpoint and images used, upload to workspace by Friday
+
+Action by Melvin
+a) to make all other changes to improve the flow of the slides and remove the boring materials and integrate the updates
+b) integrate changes to UNIX.tex and powerpoint from Khoa and upload updated slides/notes to workspace by Monday

@@ -1,0 +1,43 @@
+Presentation: Based on a "Use as you need" style
+  Unix account set - up instructions will be fitted into the presentation slides
+  
+  There will be 2 helpers per lab for each presenter
+  
+  (for Melvin) Activity 4: We will get freshmen to create file in a directory on their own terminals and then ask partner freshman to download
+  
+  For email matters we will get freshmen to refer to CF website
+ 
+  Time Filler (if workshop ends early): teach setting up of personal html page
+
+  (for Melvin) In piped example, we will introduce GREB together with “5 SMS-es activity”
+
+  (for Melvin) We will add in slides on -lpq -lprm, pusage
+
+  (for Melvin) Need to add in pictures of sunfire
+
+  Presenter will demo printing, student helper to bring in the printout
+  
+  Everyone will be given 1 set of hardcopy notes
+ 
+Pre-event arrangements
+  FOW committee to check AV systems in labs the day before (5th August that is)
+
+  For “logging into soc using VPN”, we will get IT unit to mention it on 4th Aug during IT Unit talk
+ 
+Contacts and Groupings
+  Melvin and Boon Heng
+
+  Liyong and Weihang*
+  
+  Max and Kee Kiat*
+  
+  Hugo and Nicholas
+  
+  *no surprises, the switch was made after the talk ended
+
+Faizal will be getting all contacts into a list and distributing it in due time
+
+Further notes
+  Melvin will be posting his teaching slides and documents at a later time
+
+  Feel free to voice any doubts.
